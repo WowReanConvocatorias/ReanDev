@@ -19,14 +19,11 @@ Gracias a quienes hacen este proyecto posible y su respectivo crédito a:
  Copyright (C) Muzashi (https://github.com/Muzashi)
  Copyright (C) Jildor (https://github.com/Jildor)
  Copyright (C) Rinsewind (https://github.com/Rinsewind)
- Copyright (C) Dolanpls (https://github.com/Dolanpls)
  Copyright (C) Evef (https://github.com/Evef)
- Copyright (C) Apa (https://github.com/ApaxD)
  Copyright (C) Jar (https://github.com/JarDv)
- Copyright (C) Komix (https://github.com/kalkrux)
- Copyright (C) Ramas (https://github.com/ramasdev)
  Copyright (C) Saitama (https://github.com/cagoncevatt)
  Copyright (C) Soneh (https://github.com/mauvas)
+ Copyright (C) Efreet (https://github.com/Efreet)
  Copyright (C) Eilo-Patches (https://github.com/eilo/Eilo-Patches)
  Copyright (C) ReanEmu (https://github.com/ComunidadRean/ReanEmu)
  Copyright (C) WoWReAn Emu (https://github.com/eilo/wowrean-emu)
@@ -194,7 +191,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 1.91 - 16/02/2013: Dalaran Sewers: Corregida la posición de Shadow Sight en la arena por Gildor
 1.92 - 18/02/2013: Implement Resilience and basic armor penetration por Dany
 1.94 - 28/02/2013: Remove glow vision in arena por Dany
-1.97 - 29/03/2013: The eye of Eternity cerrada hasta proximo aviso por Eilo
 1.99 - 31/03/2013: Correcciones menores al llamado del LeaveChannel en LogoutPlayer por Eilo
 1.100 - 02/04/2013: Avisos de Join/Leave desactivados por Eilo
 1.101 - 07/04/2013: Pets will not attack when they are under cc effects by Phantons
@@ -299,11 +295,23 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 1.225 - 05/12/2013: Wintergrasp: Permitir la spell Swift Flying Wisp para los elfos nocturnos en Wintergrasp
 1.226 - 22/12/2013: Corrigiendo el crash de UpdateSplineMovement por Eilo
 1.227 - 23/12/2013: Corrigiendo el crash de Spell::DoAllEffectOnTarget por Eilo
-1.228 - 08/03/2014: Core/PlayerAI: Implementado el MovementInform para un PlayerAI de mas utilidad y deja el camino para implementar mas métodos útiles para eventos a lo que de la imaginación por Jar
+1.228 - 08/03/2014: Core/PlayerAI: Implementado el MovementInform para un PlayerAI de mas utilidad y deja el camino para implementar mas métodos útiles para eventos a lo que de la imaginación
 1.229 - 14/03/2014: Core/Vehiculos: Ahora cuando un palyer suba a un vehículo y éste tenga accesorios  que pueden ser utilizados, el asiento del accesorio tendrá prioridad de ser ocupado, antes de ocupar el siguiente campo libre del vehículo base por Jar
 1.230 - 19/03/2014: Core/DK: Implementado Rune Grace Period (2SR) por Morgoporc y modificado por Gildor
 1.231 - 19/03/2014: Creatures: No deberian castear si las afecta algun Crowd Control por Mauvas
 1.232 - 25/03/2014: Core/Spells: Ahora las spells que seleccionan objetivos dentro de una trayectoria, seleccionarán como primer objetivo válido a la unidad que cumpla el requisito Hostil/Amigo según las características de la spell y el caster por Jar
+1.233 - 03/04/2014: Authenticator: Ahora pedirá authenticator si la ultima ip no coincide con la actual de logueo (posible fraude) y si esta configurado un codigo de authenticator por Eilo
+1.234 - 16/04/2014: Authenticator: Cuando la IP sea la misma, ya no devuelve error de login por Soir
+1.235 - 19/04/2014: Core/SpellAreas: las auras se recalculan correctamente con el cambio de QuestStatus por Muzashi
+1.236 - 19/04/2014: Core/Unit: Evitamos que el método Unit::setDeathState sobrescriba el spline movement actual de los jugadores cuando estos mueren, eso permite que el movimiento finalice en el siguiente punto después de morir, necesario para algunas mecánicas donde al morir un jugador debe ser desmontado o situado en un lugar específico, véase el método Unit::_ExitVehicle(Position const* exitPosition) por Jar
+1.237 - 22/04/2014: Core/Unit: Corregida la forma en que se calcula la velocidad final de un NPC cuando está bajo los efectos de reducción de movimiento (AURA_MOD_DECREASE_SPEED), junto con un aura que especifique un máximo de velocidad  reducida permitida para ese NPC (AURA_MOD_MINIMUM_SPEED) por Jar
+1.238 - 06/05/2014: DungeonFinder: Reducido el tiempo de actualizacion de contenedores para que encuentre mas rapido grupos por Eilo
+1.239 - 07/05/2014: Movement: Workaround (hasta que tengamos mmaps) al generador de movimiento de Fear, para Dalaran Sewers, evita caerse por los bordes de la arena por Soneh 
+1.240 - 07/05/2014: Movement: Workaround (hasta que tengamos mmaps) al generador de movimientos Confused, para Dalaran Sewers, evita caerse por los bordes de la arena por Soneh 
+1.241 - 07/05/2014: Vehiculos: Mejorado el script de npc_generic_harpoon_cannon por Muzashi
+1.242 - 20/05/2014: Core/Gameobject: Ampliando distancia desde la cual se puede interactuar con GAMEOBJECT_TYPE_FISHINGNODE
+1.243 - 22/05/2014: Core/Achievements: Implementado un metodo para que todos los players de la banda obtengan los Primeros del Reino si se utiliza DoCompleteAchievement mediante un delay, bloqueando el Primero del Reino tras conseguirlo, parche de Darkman1983, para Rean por Efreet
+1.244 - 24/05/2014: LFG: Corregida la opción del Dungeon finder para salir de la mazmorra cuando se han concluido todos los boss por Jar
 
 
 ########################
@@ -327,6 +335,19 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.1.17 - 08/10/2013: TrialOfTheCrusader: Gormok ahora comenzará el encuentro con los snobolds a su espalda por Saitama
 2.1.18 - 08/10/2013: TrialOfTheCrusader: Gormok, ahora las Firebombs de los snobolds dejarán fuego en su punto de impacto por Saitama
 2.1.19 - 26/10/2013: TrialOfTheCrusader: Gormok, cuando queden Snobolds en la espalda del boss al momento de su muerte estos bajarán y enfrentarán a los players por Saitama
+2.1.20 - 13/04/2014: TrialOfTheCrusader: Corregido el cast de Fire Bomb del Snobold Vassal de Gormok por Saitama
+2.1.21 - 13/04/2014: TrialOfTheCrusader: Corregido el timer del primer cast de Fire Bomb de los Snobold Vassal de Gormok por Saitama
+2.1.22 - 14/04/2014: TrialOfTheCrusader: Retocados los eventos de Massive Crash y Trample de Icehowl para lograr un efecto más blizzlike por Saitama
+2.1.23 - 14/04/2014: TrialOfTheCrusader: Añadido control de unit state a Icehowl para que no interrumpa hechizos en caso de otros eventos por Saitama
+2.1.24 - 15/04/2014: TrialOfTheCrusader: Implementado Powering Up permitiendo obtener Empowered Light o Empowered Dark en el encuentro de Twin Val'kyr, original por tibbi, adaptado por Saitama
+2.1.25 - 15/04/2014: TrialOfTheCrusader: Ahora las auras secundarias de Light y Dark Essence serán removidas correctamente al remover su aura principal en el encuentro con Twin Val'kyr, original por tibbi, adaptado por Saitama
+2.1.26 - 16/04/2014: TrialOfTheCrusader: El orden de las spells del encuentro de Twin Val'kyr será al azar respetando el ciclo correspondiente de manera blizzlike por Saitama
+2.1.27 - 24/04/2014: TrialOfTheCrusader: Modificada la manera en que Anub'arak se mueve durante el uso de Pursuing Spikes para que sea más blizzlike por Saitama
+2.1.28 - 25/04/2014: TrialOfTheCrusader: Corregido el evento Emerge de Anub'arak para que funcione de manera blizzlike por Saitama
+2.1.29 - 04/05/2014: TrialOfTheCrusader: Cambiando gestión de los cadáveres de Swarm Scarab para evitar el bug del dot de Acid-Drenched Mandibles por Saitama
+2.1.30 - 27/05/2014: TrialOfTheCrusader: Corregida la aplicación del debuff de Paralytic Spray y Burning Spray de Acidmaw y Dreadscale para que respeten la dificultad por Saitama
+2.1.31 - 27/05/2014: TrialOfTheCrusader: Añadido script name a las versiones por dificultad faltantes de Paralytic Spray de Acidmaw por Saitama
+2.1.32 - 27/05/2014: TrialOfTheCrusader: Añadido script name a las versiones por dificultad faltantes de Burning Spray de Dreadscale por Saitama
 - IcecrownCitadel - 
 2.2.4  - 26/11/2011: Inmunidades en script para todos los bosses y mini bosses por Eilo
 2.2.6  - 24/10/2011: Trash mob Deathbound Ward disminuido rango de aggro por Plangcoder
@@ -343,7 +364,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.29 - 04/12/2011: LichKing Valkyrs ajuste inmunidades por Eilo
 2.2.30 - 25/11/2011: ICC Trashmob implementacion original por Eilo, en sai y mejoras por Muzashi
 2.2.31 - 21/11/2011: Inmunidades en db para todos los bosses y mini bosses por Eilo
-2.2.33 - 04/12/2011: LichKing Valkyrs ajuste velocidad en script por Eilo
 2.2.36 - 13/11/2011: Sindragosa arreglo para no perder target apenas baje por Retriman
 2.2.40 - 13/01/2012: LichKing inmune a taunt en cambio de fase por Odyssey
 2.2.43 - 09/11/2011: Trashmob Valkyr lower spire añadida AI por Macavity
@@ -504,6 +524,11 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.238 - 03/11/2013: Valithria: añadido texto faltante de introducción al encuentro por Lauja
 2.2.239 - 12/02/2014: Rotface: desarrollado sistema para la correccion del target de los ooze de rotface, tanto los grandes como los pequeños, por Efreet
 2.2.240 - 05/03/2014: Putricide, ahora la Mutated Abomination perderá el efecto de Tear Gas al mismo tiempo que los jugadores por Saitama
+2.2.241 - 22/04/2014: TheLichKing: Valkyrs, se ajusta el valor de run speed por Jar
+2.2.242 - 26/05/2014: TheLichKing añadido tiempo de activación a los Raging Spirit por Saitama
+2.2.243 - 26/05/2014: TheLichKing evitando que la spell Raging Spirit no realice su efecto por fallar o por inmunidades del objetivo por Saitama
+2.2.244 - 27/05/2014: TheLichKing corregido react state passive de Raging Spirit para que no ataque pets mientras no esté activado por Saitama
+2.2.245 - 27/05/2014: TheLichKing corregido react state passive de Shambling Horror para que no ataque pets mientras no esté activado por Saitama
 - Naxxramas -
 2.3.1  - 25/03/2013: Naxxramas: Heigan arreglo del Plague Cloud para el logro Safety Dance por Eilo
 2.3.2  - 06/06/2013: Naxxramas: Los cuatro jinetes: permitiendo que el cofre sea seleccionable en dificultad 25 por Dolanpls
@@ -514,11 +539,14 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.3.7  - 28/02/2014: Naxxramas: Thaddius: Ahora se reseteara de forma correcta si hay wipe, evitando que nada mas entrar en la sala o combate Thaddius lance los orbes de relampago, por Efreet
 2.3.8  - 03/03/2014: Naxxramas: Añadidos los GOs (portales y sus visuales) al final de cada arrabal y al incio de la instance para que teleporten a los jugadores al inicio de la ciudadela cuando acaban con el respectivo boss, por Efreet
 2.3.9  - 03/03/2014: Naxxramas: Añadidos los GOs 'orbe de naxxramas' para acceder a la zona de Sapphiron y eliminados el area trigger anterior, dejandolo de forma blizzlike, por Efreet
-2.3.10 - 09/03/2014: Naxxramas: Thaddius: fixeadas las auras que se deben aplicar cuando juntas las mismas cargas con los buffos de Polarity Shift, por Efreet
 2.3.11 - 09/03/2014: Naxxramas: Añadidos los GOs Tesla Coil para los bosses Feugen y Stalagg y sus principales spells/emotes, por Efreet
 2.3.12 - 13/03/2014: Naxxramas: Thaddius: mejora de los estados de los Teslas y casteo de Shock si sacamos de las zonas a Feugen y Stalagg, por Efreet
 2.3.13 - 13/03/2014: Naxxramas: Faerlina: Agregado el GOB web que impide salir de la zona de combate del boss mientras este esta activo, por Efreet
 2.3.14 - 13/03/2014: Naxxramas: Ahora los adds Embalming Slime castearan su spell Embalming Cloud, por Efreet
+2.3.15 - 01/04/2014: Naxxramas: Grobbulus: Ahora se aggrearan todos los mobs de la sala de Grobbulus al iniciar el ataque con el, por Efreet
+2.3.16 - 01/04/2014: Naxxramas: Remendejo: Ahora se aggrearan todos los mobs de la sala de Remendejo al iniciar el ataque con el, por Efreet
+2.3.17 - 01/04/2014: Naxxramas: Ahora se aggrearan todos los oozoes de la sala anterior a Remendejo al iniciar el ataque con alguno de ellos, por Efreet
+2.3.18 - 05/05/2014: Naxxramas: El Toxic Tunnel luego de Grobbulus ya no dejará a los players en combat por Saitama
 - Onyxia'sLair -
 2.4.1  - 28/03/2011: Onyxia'sLair: Immunities on script by Souler
 2.4.2  - 04/03/2014: Onyxia'sLair: Actualizadas inmunidades por db a Onyxia en dificultad 10 jugadores por Hyxon
@@ -573,7 +601,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.38 - 21/10/2013: Ulduar: Flame Leviathan corregida la habilidad Mimiron's Inferno, ahora se ejecuta de forma correcta por jar
 2.6.39 - 22/10/2013: Ulduar: Flame Leviathan corregida la habilidad Thorim's Hammer, ahora se ejecuta de forma correcta por jar
 2.6.40 - 22/10/2013: Ulduar: Flame Leviathan corregida la habilidad Hodir's Fury, ahora se ejecuta de forma correcta por jar
-2.6.41 - 22/10/2013: Ulduar: Flame Leviathan corregida la habilidad Freya's Ward, ahora se ejecuta de forma correcta, original de swerg modificado por jar
 2.6.42 - 26/10/2013: Ulduar: Thorim correciones en los targets de Lightning Release por Saitama
 2.6.43 - 26/10/2013: Ulduar: Thorim dado un aspecto más blizzlike al evento de fin del hardmode por Saitama
 2.6.44 - 27/10/2013: Ulduar: Auriaya la Feral Seeping Essence ahora causará daño correctamente por Saitama
@@ -719,12 +746,94 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.187 - 29/03/2014: Ulduar: Ya no se ejecutara el evento Systems Shutdown de Flame Leviathan si no es provocado por los jugadores por Jar
 2.6.188 - 30/03/2014: Ulduar: AssemblyOfIron implementado el uso de la spell Electrical Charge para el hardmode de Steelbreaker por Saitama
 2.6.189 - 30/03/2014: Ulduar: AssemblyOfIron removido script innecesario de spell Meltdown de Steelbreaker por Saitama
+2.6.190 - 05/04/2014: Ulduar: Ahora los jugadores no podrán subir a las torretas de Flame Leviathan, mientras tenga activa el aura Systems Shutdown (62475) por Jar
+2.6.191 - 10/04/2014: Ulduar: Trabajado un aspecto más blizzlike para la spell Overload de Stormcaller Brundir durante el encuentro de AssemblyOfIron por Saitama
+2.6.192 - 10/04/2014: Ulduar: Añadida inmunidad al snare a AssemblyOfIron en dificultad 10 jugadores por Saitama
+2.6.193 - 10/04/2014: Ulduar: Añadida inmunidad al snare a AssemblyOfIron en dificultad 25 jugadores por Saitama
+2.6.194 - 10/04/2014: Ulduar: Corregido el daño por dificultad de la spell Overload de Stormcaller Brundir de Assembly of Iron por Saitama
+2.6.195 - 10/04/2014: Ulduar: Ajustados los tiempos de Rune of Power de Runemaster Molgeim de AssemblyOfIron para acercarse a un valor más blizzlike por Saitama
+2.6.196 - 10/04/2014: Ulduar: Corregido el tiempo máximo para el primer uso de Lightning Whirl de Stormcaller Brundir en AssemblyOfIron por Saitama
+2.6.197 - 10/04/2014: Ulduar: Ajustados los timers de Overload de Stormcaller Brundir en AssemblyOfIron para intentar acercarlos a un valor más blizzlike por Saitama
+2.6.198 - 10/04/2014: Ulduar: Flame Leviathan, ajustado el tiempo para el evento pursue target basado en videos de los servidores oficiales por Jar
+2.6.199 - 10/04/2014: Ulduar: AssemblyOfIron movidos quotes y mensajes a creature_text por Saitama
+2.6.200 - 10/04/2014: Ulduar: Ahora AssemblyOfIron solo dirá un quote al azar al iniciar el combate siendo más blizzlike por Saitama
+2.6.201 - 11/04/2014: Ulduar: Implementadas acciones pre-encounter a AssemblyOfIron para darles un aspecto más blizzlike por Saitama
+2.6.202 - 11/04/2014: Ulduar: Flame Leviathan, ajustado el tiempo para el evento Hodir's Fury basado en videos de los servidores oficiales Jar
+2.6.203 - 11/04/2014: Ulduar: Flame Leviathan, ajustado el tiempo para el evento Freya's Ward basado en videos de los servidores oficiales Jar
+2.6.204 - 11/04/2014: Ulduar: Flame Leviathan, ajustado el tiempo para el evento Mimiron's Inferno basado en videos de los servidores oficiales Jar
+2.6.205 - 11/04/2014: Ulduar: Flame Leviathan, ajustado el tiempo para el evento Thorim's Hammer basado en videos de los servidores oficiales Jar
+2.6.206 - 11/04/2014: Ulduar: Las auras o beneficios que brindan las cuatro torres en el Hard Mode de Leviathan, ahora solo se aplicaran al boss por Jar
+2.6.207 - 11/04/2014: Ulduar: Mejorados aspectos visuales del movimiento de Stormcaller Brundir durante Lightning Tendrils por Saitama
+2.6.208 - 12/04/2014: Ulduar: Ajustado el tiempo que Stormcaller Brundir se mantiene en el aire durante Lightning Tendrils para ajustarlo a valores blizzlike por Saitama
+2.6.209 - 11/04/2014: Ulduar: Ahora el npc Freya’s Beacon que representa la Torre de Vida  en el Hard Mode contra Flame Leviathan, no será visible, atacable o seleccionable por los jugadores por Jar
+2.6.210 - 11/04/2014: Ulduar: El npc Freya’s Beacon que representa la Torre de Vida, ya no atacara a los jugadores, evitando también que se mueva por toda la sala por Jar
+2.6.211 – 11/04/2014: Ulduar: Ajustada el aura de color verde  del npc Freya’s Beacon, ahora muestra un aura similar a la que se puede observar en los videos oficiales por Jar
+2.6.212 - 11/04/2014: Ulduar: Corregida la animación del npc Freya’s Beacon, cuando invoca los Freya’S Ward dando un aspecto más Blizzlike por Jar
+2.6.213 – 11/04/2014: Ulduar: implementada la spell Freya's Ward (Trigger 62907), utilizada por el npc Freya’s Beacon para invocar guardianes (Ward of Life y Writhing Lasher) por Jar
+2.6.214 – 11/04/2014: Ulduar: Ajustado el tiempo que tardan los npc Ward of Life en castear Lash (65062), antes cada 20 segundos, ahora en un random de 8 a 12 segundos por Jar
+2.6.215 – 12/04/2014: Ulduar: Implementado el mini evento que “inicia” el encuentro contra Flame Leviathan por Jar
+2.6.216 - 12/04/2014: Ulduar: AssemblyOfIron ajustado el radio de High Voltage de Steelbreaker para evitar daño a NPC's no involucrados en el combate por Saitama
+2.6.217 - 12/04/2014: Ulduar: Mejorado el sistema de movimiento de Stormcaller Brundir durante Lightning Tendrils para que sea más blizzlike por Saitama
+2.6.218 - 12/04/2014: Ulduar: Corregidos los textos para el encuentro contra Flame Leviathan por Jar
+2.6.219 - 14/04/2014: Ulduar: Algalon, implementado evento en Dalaran al derrotar al boss por Muzashi
+2.6.220 - 14/04/2014: Ulduar: Ya no se permitirá subir a las torretas de Flame Leviathan sin haber iniciado el combate por Jar
+2.6.221 - 14/04/2014: Ulduar: Corregido el action que no permitía iniciar el Hard Mode en Flame Leviathan por Jar
+2.6.222 - 20/04/2014: Ulduar: Corregida la spell Stone Grip de Kologarn, ahora la mecánica que envuelve dicha spell será de forma Blizzlike por Jar
+2.6.223 - 20/04/2014: Ulduar: Corregido el inicio del evento contra Kologarn por Jar
+2.6.224 - 24/04/2014: Ulduar: Corregido el max targets del Brain Link de YoggSaron por Evef
+2.6.225 - 24/04/2014: Ulduar: En la 3º fase de YoggSaron no saldrán Omnious Clouds por Evef
+2.6.226 - 25/04/2014: Ulduar: YoggSaron loteará correctamente en cualquier modalidad de 10 por Evef
+2.6.227 - 25/04/2014: Ulduar: YoggSaron loteará correctamente en cualquier modalidad de 25 por Evef
+2.6.228 - 04/05/2014: Ulduar: Ahora es posible hacerle daño a las torretas de defensa en Flame Leviathan por Jar
+2.6.229 - 04/05/2014: Ulduar: Corregido error que no permitía obtener de forma correcta la información sobre si un encuentro estaba llevándose a cabo, cuando un jugador intentaba ingresar a la instance por Jar
+2.6.230 - 04/05/2014: Ulduar: Ahora es posible romper los cubos (Hodir's Fury) de hielo con las habilidades de los vehículos en el hard mode de Flame Leviathan por Jar
+2.6.231 - 04/05/2014: Ulduar: Modificado el rango de ataque para la habilidad BatteringRam por Jar
+2.6.232 - 04/05/2014: Ulduar: Actualizado el sistema que se utiliza para la Spell Throw Passenger visualmente mas blizzlike por Jar
+2.6.233 - 04/05/2014: Ulduar: Modificado el rango de la spell Electroshock del vehiculo Salvaged Siege Engine por Jar
+2.6.234 - 04/05/2014: Ulduar: Ahora al activar el hard mode de Flame Leviathan, los buffos de las torres se aplicaran inmediatamente en el boss por Jar
+2.6.235 - 05/05/2014: Ulduar: Corregidos los slay quotes de Mimiron evitando el bug con su mecánica de Self-Repair por Saitama
+2.6.236 - 06/05/2014: Ulduar: El Flash Freeze de Hodir ya no congelará hunter pets, guardians, ni totems por Saitama
+2.6.237 - 06/05/2014: Ulduar: Removido el evento que causaba un bug visual cuando VX-001 utilizaba P3Wx2 Laser Barrage durante la fase 2 de Mimiron por Saitama
+2.6.238 - 08/05/2014: Ulduar: Corregidos targets conditions para Flame Breath de Razorscale en su dificultad de 10 jugadores por Saitama
+2.6.239 - 08/05/2014: Ulduar: Añadidos targets conditions para Flame Breath de Razorscale en su dificultad de 25 jugadores por Saitama
+2.6.240 - 08/05/2014: Ulduar: Serie de misiones para obtener la llave del Planetario Celestial por dr-j, modificado por Rincewind
+2.6.241 - 09/05/2014: Ulduar: Corregida la duración del Game Object Iron Mole Machine del encuentro de Razorscale por Saitama
+2.6.242 - 09/05/2014: Ulduar: Corregido el comportamiento de la spell Devouring Flame de Razorscale para que sea blizzlike por Saitama
+2.6.243 - 09/05/2014: Ulduar: Añadidos los Broken Harpoon Guns que faltaban para Razorscale en el modo 25 jugadores por Saitama
+2.6.244 - 11/05/2014: Ulduar: Immunities of Algalon 25 por Hyxon
+2.6.245 - 12/05/2014: Ulduar: Implementado un aspecto más blizzlike a la invocación de Mole Machines del encuentro de Razorscale por Saitama
+2.6.246 - 12/05/2014: Ulduar: Corregido el fallo que hacía a Razorscale disparar Flame Breath a un jugador antes de volver a levantar vuelo por Saitama
+2.6.247 - 12/05/2014: Ulduar: Razorscale no debe utilizar Flame Breath al entrar en fase de suelo permanente por Saitama
+2.6.248 - 12/05/2014: Ulduar: Razorscale ahora será aturdida mientras esté en fase de suelo por Saitama
+2.6.249 - 12/05/2014: Ulduar: Razorscale solo debe perder las auras de las harpoons turrets y del stun al acabar la fase de suelo por Saitama
+2.6.250 - 12/05/2014: Ulduar: Añadido check para evitar que Razorscale entre en fase de suelo permanente estando en fase de vuelo por Saitama
+2.6.251 - 12/05/2014: Ulduar: Razorscale debe ser seleccionable durante el transcurso de todo el encuentro por Saitama
+2.6.252 - 12/05/2014: Ulduar: Mejoras varias en eventos y visuales de los Harpoon Turrets de Razorscale por Saitama
+2.6.253 - 13/05/2014: Ulduar: Añadido check de state casting para Darkrune Sentinel en el encuentro de Razorscale por Saitama
+2.6.254 - 13/05/2014: Ulduar: Corregido el uso de Whirlwind del Dark Rune Sentinel en el encuentro de Razorscale por Saitama
+2.6.255 - 13/05/2014: Ulduar: Corregida la spell Flame Buffet por dificultad del encuentro de Razorscale por Saitama
+2.6.256 - 13/05/2014: Ulduar: Ahora Razorscale no utilizará spells mientras desciende para la fase de suelo por Saitama
+2.6.257 - 13/05/2014: Ulduar: Ajustadas velocidades de movimiento de Razorscale segun su fase por Saitama
+2.6.258 - 13/05/2014: Ulduar: Corregido el reinicio de las Harpoon Turrets en caso de fallar en derrotar a Razorscale por Saitama
+2.6.259 - 13/05/2014: Ulduar: En su fase final Razorscale debe usar Devouring Flame solo sobre su tank actual por Saitama
+2.6.260 - 13/05/2014: Ulduar: Corregido el gossip menu y option del Expedition Commander antes del encuentro de Razorscale por Saitama
+2.6.261 - 14/05/2014: Ulduar: Transformados script texts de Razorscale a creature text por Saitama
+2.6.262 - 14/05/2014: Ulduar: Al destruir las harpoon turrets en la transición de fase final de Razorscale éstas no deben volver a repararse por Saitama
+2.6.263 - 14/05/2014: Ulduar: Correcciones menores para evitar el spam de emotes y posibles fallos al reiniciarse Razorscale por Saitama
+2.6.264 - 16/05/2014: Ulduar: Corregido error en los id de los cofres de Thorim por Jar
+2.6.265 - 17/05/2014: Ulduar: Scripteado el logro Take Out Those Turrets del Leviathan en dificultades 10/25, por Efreet
+2.6.266 - 17/05/2014: Ulduar: Scripteados los logros I choose You... de la Asamblea de Hierro en 10/25 (los 6 logros), por Efreet
+2.6.267 - 17/05/2014: Ulduar: Actualizado el código que involucra las torretas defensivas de Flame Leviathan  para dar soporte al logro Take Out Those Turrets por Jar
+2.6.268 - 14/05/2014: Ulduar: Añadido check de state a Razorscale para evitar que interrumpa el casteo de una spell si hay otro evento preparado para ejecutarse por Saitama
+2.6.269 - 19/05/2014: Ulduar: Corregido el fallo visual de Razorscale al reiniciarse durante la fase de suelo por Saitama
+2.6.270 - 19/05/2014: Ulduar: Modificado el spawn de los adds de Razorscale buscando un aspecto más blizzlike por Saitama
 - Vault of Archavon -
 2.7.0  - 08/11/2012: VaultOfArchavon: Corregido loot de Toravon por Muzashi
 2.7.1  - 04/12/2012: VaultOfArchavon: Fix entrada a la instance solo si eres defensor de Wintergrasp por Gildor
 - ObsidianSanctum -
 2.8.1  - 01/05/2012: ObsidianSanctum: Añadido trashmob e inmunidades por Zwerg, actualizado por Eilo
 2.8.2  - 28/02/2014: ObsidianSanctum: Ahora los debuffos aplicados por los dracos crepusculares en modalidad heroica se desvaneceran segun se van derrotando a dichos dracos, por Efreet
+2.8.3  - 01/04/2014: ObsidianSanctum: Ahora se aggreara toda la mazmorra al iniciar el combate con Sartharion, por Efreet
 - RubySanctum -
 2.9.1  - 17/06/2012: RubySanctum: Trashmob añadido, inmunidades y script en SAI por Muzashi
 2.9.2  - 27/05/2012: RubySanctum: Baltharus inmune a knockback por Xanvial
@@ -767,7 +876,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.9.43 - 19/01/2013: RubySanctum: Evitando que intenten llevar a Halion al borde para resetearlo por Dolanpls
 2.9.44 - 06/11/2013: RubySanctum: Ajustado los Effect para que solo actue dentro del area por Evef
 2.9.45 - 07/11/2013: RubySanctum: Añadida flag anti taunt para Living Inferno por Evef
-2.9.46 - 26/11/2013: RubySanctum: Añadido un segundo portal para el mundo material y ajustado su tamaño por Evef.
+2.9.46 - 26/11/2013: RubySanctum: Corregido el spawn de los Twilight Portal en relación a la fase de Halion por Evef y Saitama
 2.9.47 - 02/12/2013: RubySanctum: El fuego del Meteor Strike, saldra de manera mas aleatoria con efecto mas blizzlike por Evef
 2.9.48 - 03/12/2013: RubySanctum: Living ember saldrán de los fuegos y atacarán al salir por Evef.
 2.9.49 - 03/01/2013: RubySanctum: El primero twilight cutter sera de 37 a 42 s mientras que el resto 32s fijos por Eilo
@@ -775,13 +884,22 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.9.51 - 03/01/2013: RubySanctum: El Meteor Strike de la tercera fase tarda entre 30 y 35s para salir comenzada la fase por Eilo
 2.9.52 - 08/03/2014: RubySanctum: Zarithrian, ahora Onyx Flamecaller seleccionará a un objetivo aunque esté alejado por Gildor
 2.9.53 - 09/03/2014: RubySanctum: Zarithrian, ahora se invocarán 4 Onyx Flamecaller en las modalidades de 25 jugadores por Gildor
+2.9.54 - 24/05/2014: RubySanctum: Modificada la invocación de clones de Baltharus the Warborn para que sea más blizzlike por Saitama
+2.9.55 - 24/05/2014: RubySanctum: Añadido tiempo de activación a los clones de Baltharus the Warborn por Saitama
+2.9.56 - 24/05/2014: RubySanctum: Ahora la spell Lava Gout de los Onyx Flamecaller del encuentro de General Zarithrian será interrumpible por Saitama
+2.9.57 - 26/05/2014: RubySanctum: Corregida la distancia de los portales de la tercera fase de Halion buscando un aspecto más blizzlike por Saitama
 - Ahn'Kahet -
 2.10.1 - 03/08/2011: Ahn'Kahet: Taldaram combate en invisible por Greymane
 2.10.2 - 16/12/2011: Ahn'Kahet: Taldaram daño esferas ajustado por Eilo
 2.10.3 - 18/04/2012: Ahn'Kahet: Heraldo Volazj ajustado daño de adds por Asleen
 2.10.4 - 23/05/2012: Ahn'Kahet: Taldaram movimiento de las esferas por Luriel
+2.10.5 - 29/04/2014: Ahn'Kahet: Corregido el loot para los trash mobs en modo heroico por Hyxon
+2.10.6 - 28/04/2014: Ahn'Kahet: Se agrega el teleport ubicado después del último boss por Jar
+2.10.7 - 09/04/2014: Ahn'Kahet: Se agregan los npc Ahn'kahar Watcher's y se da el soporte para la quest All Things in Good Time, autor Dr-J revisado e implementado por Jar
 - AzjolNerub -
 2.11.2 - 06/07/2013: AzjolNerub: Cambio de la faccion de Hadronox para evitar que combata con los mobs que le rodean y se cuele en las texturas por Dolanpls
+2.11.3 - 22/04/2014: AzjolNerub: Scripteado completamente el evento de Hadronox y el logro Hadronox Rechazado, por Efreet
+2.11.4 - 01/05/2014: AzjolNerub: Arreglos de xploit y pequeños ajustes en el evento de Hadronox, por Efreet
 - CullingOfStratholme -
 2.12.1 - 17/12/2011: CullingOfStratholme: Arthas no desaparece a distancia por Eilo
 2.12.4 - 19/07/2012: CullingOfStratholme: Infinite Corruptor added and improved script/achievements por Eilo
@@ -793,14 +911,20 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.12.10- 05/02/2014: CullingOfStratholme: Desarrollo del logro "Festin de Zombies" por Efreet
 - TrialOfTheChampion -
 2.13.1 - 15/08/2012: TrialOfTheChampions: Reimplementacion y soporte spells por Souler, mejoras, reordenacion y complementos por Eilo
+2.13.2 - 15/04/2014: TrialOfTheChampions: Añadido el GOSSIP faltante para evitar todas las presentaciones y realizar directamente el encuentro 1, por Efreet
 - Drak'Tharon -
 2.14.1 - 17/12/2011: Drak'Tharon: Visuales y flags varias del trash y reward de LFG por Treak y Eilo
 2.14.2 - 11/02/2011: Drak'Tharon: Novos permitir reinicio boss por Odyssey
 2.14.3 - 24/03/2011: Drak'Tharon: Tharon'Ja no atacable hasta terminar demas bosses por Souler
 2.14.4 - 12/03/2013: Drak'Tharon: Añadido soporte para las quest Búsqueda y rescate - Juegos mentales por Muzashi
+2.14.5 - 28/04/2014: Drak'Tharon: Novos ahora el spawn de los controladores de los cristales saldran alternativamente de cada puerta, por Efreet
+2.14.6 - 06/05/2014: Drak'Tharon: Novos añadido spell script y funcionamiento de la spell Summon Minions en la modalidad 5H, por Efreet
+2.14.7 - 29/04/2014: Drak'Tharon: Corregido el loot para los trash mobs en modo heroico por Hyxon
+2.14.8 - 08/05/2014: Drak'Tharon: Novos corregidos los GOBs y sus visuales durante todo el combate con efectos blizzlike, por Efreet
 - Gundrak -
 2.15.1 - 09/08/2011: Gundrak: Colossus desactiva el aura de MojoVolley al morir por Odyssey
 2.15.2 - 16/08/2012: Gundrak: Colossus eliminado doble loot por Eilo
+2.15.3 - 29/04/2014: Gundrak: Corregido el loot para los trash mobs en modo heroico por Hyxon
 - HallsOfReflection -
 2.16.1 - 08/10/2011: HallsOfReflection: Reimplementacion y añadido LichKing por Odyssey, editada por Eilo
 2.16.2 - 07/11/2012: HallsOfReflection: Fix waves, ahora no se juntara una oleada con otra al pasar por la zona del altar por Gildor
@@ -810,6 +934,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.16.6 - 13/11/2013: HallsOfReflection: Durante el evento de escapar del rey exánime, se casteará Pain and Suffering así evitando que los players se mantengan detras del boss por Sothu
 2.16.7 - 13/03/2014: HallsOfReflection: Ahora Sylvanas o Jaina tendran la vida correcta en la fase outro (aprox un 7% de su vida maxima), por Efreet
 2.16.8 - 23/03/2014: HallsOfReflection: Corregido el modo en que se registra el crédito de Survive the encounter with the Lich King al lograr escapar por Saitama
+2.16.9 - 24/05/2014: HallsOfReflection: Corregido el fallo que causaba que The Lich King se reiniciara perdiendo sus auras por Saitama
 - PitOfSaron -
 2.17.1 - 24/12/2011: PitOfSaron: Correccion de varios mobs por Eilo
 2.17.3 - 16/08/2012: PitOfSaron: Krickandick ajuste de efectos visuales y timers en pursuit por Eilo
@@ -821,7 +946,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.17.9 - 26/11/2013: PitOfSaron: Fixeado el exploit con el NPC Ymirjar (31260) de la instance y control mental, de forma que no pueda regenerar vida, por Efreet
 2.17.10 - 01/12/2013: PitOfSaron: Despawneados los Dientefríos de diversos eventos para un efecto mas blizzlike de la mazmorra, por Efreet
 2.17.11 - 22/01/2014: PitOfSaron: Gestion del target del boss para evitar exploit y posibles crashes en el evento de Tyrannus por Efreet
-2.17.12 - 25/03/2014: PitOfSaron: Posible solucion a crash de Tempsummon, ademas de modificacion de algun tiempo y flag por Efreet
+2.17.12 - 02/04/2014: PitOfSaron: Nueva estructura y eliminacion de Grids junto a otros puntos de posibles crasheos para la Outro (parte 1 y 2) de Tyrannus, por Efreet
 - ForgeOfSouls -
 2.18.1 - 16/08/2012: ForgeOfSouls: Bronjahm ajuste de inmunidades por Eilo
 2.18.2 - 16/08/2012: ForgeOfSouls: Adding some texts by Eilo
@@ -851,12 +976,14 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.20.17- 13/07/2012: TheOculus: Drakes proper visuals and unmount/mount behaviour original by Zwerg and Souler, improvements by Eilo
 2.20.18- 13/07/2012: TheOculus: Some gold loot, immunities and skinloot data by Zwerg
 2.20.20- 13/07/2012: TheOculus: Some define gossips by Souler
+2.20.21 - 29/04/2014: TheOculus: Corregido el loot para los trash mobs en modo heroico por Hyxon
 - TheVioletHold -
 2.21.1 TheVioletHold: Ichoron stuck on 1hp
 2.21.2 - 13/06/2012: TheVioletHold: Xevozz heroic mode improvements by Eilo
 2.21.3 - 13/06/2012: TheVioletHold: Text improvements by Eilo
 2.21.4 - 22/03/2013: TheVioletHold: Ichoron lanzara Water Blast antes de desaparecer por Dolanpls.
 2.21.5 - 25/03/2013: TheVioletHold: Añadidas las 2 habilidades faltantes a Moragg por Dolanpls.
+2.21.6 - 29/04/2014: TheVioletHold: Corregido el loot para los trash mobs en modo heroico por Hyxon
 - HallsOfLightning -
 2.22.1 - 24/10/2013: HallOfLightning: Hall of the Watchers añadido AreaTrigger para la invocacion de NPCs Titanium Thunderer y Titanium Siegebreaker por Efreet
 2.22.2 - 12/02/2014: HallOfLightning: Hall of the Watchers añadido un sistema por variables para controlar el numero de NPCs que spawnea de forma mas blizzlike, por Efreet
@@ -865,6 +992,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.23.2 - 16/08/2012: HallsOfStone: adding some texts by Eilo
 2.23.3 - 07/01/2013: HallsOfStone: Tribunalevent añadidos los AI a trash por Evef.
 2.23.4 - 07/11/2013: HallsOfStone: Fixeado el reset del evento del Tribunal para que se reinicie cuando Brann muere por Efreet
+2.23.5 - 29/04/2014: HallsOfStone: Corregido el loot para los trash mobs en modo heroico por Hyxon
 - UtgardeKeep -
 2.24.1 - 01/10/2011: UtgardeKeep: Ingvar permitiendo que se le pueda atacar en el reseteo por Eilo
 2.24.2 - 30/10/2013: UtgardeKeep: Fixeado el exploit que permitia saltarse las forjas del Horno del Odio por Efreet
@@ -874,6 +1002,17 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.25.4 - 16/08/2012: UtgardePinnacle: Skadi delete Grauf duplicated spawn by Eilo
 2.25.5 - 30/09/2012: UtgardePinnacle: KingYmiron Fix exploit atacar al rey sin matar los demas bosses by HyD
 2.25.6 - 25/02/2014: UtgardePinnacle: Skadi ahora no se le podrán lanzar arpones una vez Grauf haya sido derrotado, por Efreet
+2.25.7 - 29/04/2014: UtgardePinnacle: Corregido el loot para los trash mobs en modo heroico por Hyxon
+2.25.8 - 17/05/2014: UtgardePinnacle: Skadi scripteado el logro A mi chica le encanta Skadi, por Efreet
+2.26.9 - 23/05/2014: UtgardePinnacle: Skadi ahora el dragon tendra un efecto mas blizzlike volando en vez de corriendo por el aire, por Efreet
+2.26.10 - 24/05/2014: UtgardePinnacle: Skadi traduccion de los emotes y correccion de los mismos para que esten correctos, por Efreet
+2.26.11 - 24/05/2014: UtgardePinnacle: Skadi mejorado todo el evento, los arpones solo se lanzaran si Skadi esta en la zona correspondiente y mejora de la fase Skadi y Fly, por Efreet
+- Stratholme -
+2.26.1 - 13/04/2014: Stratholme: Ahora al eliminar los npc que están situados al costado de la entrada a la plaza de los cruzados, Timmy the Cruel será visible por Jar
+2.26.2 - 09/05/2014: Stratholme: Agregado el boss The Unforguiven con su respectivo script por Jar
+2.26.3 - 11/05/2014: Stratholme: Se implementa sistema para los PostBox, necesario para dar summon al boss Postmaster Malown por Jar
+- HellfireRamparts -
+2.27.1 - 16/05/2014: HellfireRamparts: Nazan entrara en combate de forma correcta una vez se inicie el evento con vazruden por Jar
 
 
 ###############################
@@ -1007,7 +1146,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.187 - 11/08/2013: Priest: Fix spell Avoidance (Pets), ahora Shadowfiend obtendra Avoidance de forma pasiva por Gildor
 3.188 - 11/08/2013: Druida: Fix spell Avoidance (Pets), ahora el Antárbol obtendra Avoidance de forma pasiva por Gildor
 3.189 - 19/08/2013: Sacer: Fix del levitar despues de usar un teleport o entrar a instance por Eilo
-3.190 - 12/09/2013: Stacks: Fix Leader of the Pack (Druida) and Rampage (Warrior), ahora no se acumularán por Gildor
 3.191 - 12/09/2013: Stacks: Fix Sanctified Retribution (Paladin) vs Ferocious Inspiration (Hunter) vs Arcane Empowerment (Mage), ahora no se acumularán por Gildor
 3.194 - 26/09/2013: Hunter: Fix spell Steady Shot, corregido su tiempo de casteo por Gildor
 3.195 - 28/09/2013: Stacks: Fix Enrage (Warrior), ahora no sobrescribirá a Death Wish (Warrior) por Gildor
@@ -1040,6 +1178,12 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.228 - 25/01/2014: Brujo: Fix spell Death's Embrace, ahora funcionará tambien con Drain Soul por Gildor
 3.230 - 12/03/2014: Rogue: Fix spell Kidney Shot, ahora no aplicará diminishing return al caster por Gildor y Soneh
 3.231 - 16/03/2014: DK: Fix spell Raise Ally, ajustando daño con datos aproximados por Gildor
+3.232 - 02/04/2014: DK: Fix spell Corpse Explosion, ahora usará un cadáver cercano si no hay ninguno seleccionado por joschiwald y modificado por Gildor
+3.233 - 07/04/2014: Rogue: Fix spell Detect Traps, ahora la distancia de deteccion de las trampas es correcta por PrinceCreed
+3.234 - 07/04/2014: Hunter: Fix spell Freezing Arrow, ahora eligirá correctamente al target por Soneh
+3.236 - 08/04/2014: Chaman: Fix spell Maelstrom Weapon, ahora se eliminará el efecto al lanzar las spells correspondientes y no al impactar en el objetivo por Gildor
+3.237 - 08/04/2014: Chaman: Fix spell Elemental Mastery, ahora se eliminará el efecto al lanzar las spells correspondientes y no al impactar en el objetivo por Gildor
+3.238 - 01/05/2014: Rogue: Fix Kidney Shot (8643/408) not proccing Relentless Strikes (58425) after commit 3.230 por Soneh
 
 
 #################
@@ -1086,6 +1230,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.0.12 - 18/10/2013: Clases: La hoja antigua - La cuerda adecuada (Cazador) por Lauja
 4.0.13 - 17/05/2013: Clases: El báculo de los antiguos (Cazador) por Rincewind
 4.0.14 - 10/07/2013: Clases: Ulag el Cuchilla (Guerrero) por Muzashi
+4.0.15 - 04/05/2014: Clases: La Segunda Prueba (Paladin) por Muzashi
+4.0.16 - 24/05/2014: Clases: Objetos de poder (Mago) por Muzashi
 - Especiales -
 4.1.0 - 26/03/2012: Quel'Delar: loot de Empuñadura Maltrecha por Skull
 4.1.1 - 16/03/2012: Quel'Delar: Un disfraz apropiado por Discovered, adecuaciones por Muzashi y Strolch
@@ -1100,6 +1246,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.1.10 - 28/08/2013: Campos de batalla: Llamada a las armas por Rincewind
 4.1.11 - 28/08/2013: Campos de batalla: Llamada a las armas, ahora se completarán las misiones al ganar en el campo de batalla correspondiente por Gildor
 4.1.12 - 27/02/2014: Oraculos y Tribu corazon frenetico: corregida la reputacion de misiones diarias por Rincewind
+4.1.13 - 25/05/2014: Profesion(Peleteria): El viaje acaba de empezar por Muzashi
 - Las Cumbres Tormentosas -
 4.2.0 - 25/03/2012: Hijos de Hodir: Correcciones generales en fases y quests por Muzashi
 4.2.1 - 25/03/2012: Hijos de Hodir: Disciplina y Seguir con la Disciplina por Muzashi
@@ -1143,6 +1290,9 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.2.40 - 14/02/2013: Hijos de Hodir: Alzar la lanza de Hodir por YTDB
 4.2.41 - 14/02/2013: Hijos de Hodir: Siemprescarcha - ¡Acuérdate de siemprescarcha! por Muzashi
 4.2.42 - 04/12/2013: Hijos de Hodir: Arreglar verjas por Muzashi y Rincewind
+4.2.43 - 22/04/2014: Cumbres Tormentosas: El Coloso de Hierro por Rincewind
+4.2.44 - 01/05/2014: Hijos de Hodir: Krolmir, el Martillo de las Tormentas por Kirkhammett, Malcrom y Muzashi
+4.2.45 - 01/05/2014: Hijos de Hodir: El Bancal de los Creadores por Kirkhammett
 - Corona de Hielo -
 4.3.0  - 17/04/2012: Corona de Hielo: Sangre en el agua por Muzashi
 4.3.1  - 03/04/2012: Corona de Hielo: Pura diversión por Muzashi
@@ -1223,6 +1373,12 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.3.76 - 04/12/2013: Corona de Hielo: Arrastrar y soltar por Rincewind y Muzashi
 4.3.77 - 24/02/2014: Corona de Hielo: Dejar nuestra huella por Rincewind
 4.3.78 - 03/03/2014: Corona de Hielo: Volatilidad y Tecnologia prestada por Lauja y Rincewind
+4.3.79 - 01/04/2014: Corona de Hielo: Neutralizar la plaga por Kirkhammett, adaptado por Rincewind
+4.3.80 - 09/04/2014: Corona de Hielo: El Bastión Inmundo por Rincewind y Muzashi
+4.3.81 - 09/04/2014: Corona de Hielo: El Pináculo de los Cruzados por Muzashi
+4.3.82 - 18/05/2014: Torneo Argenta: A las puertas del enemigo por Muzashi
+4.3.83 - 19/05/2014: Corona de Hielo: Nuevos reclutas por Muzashi
+4.3.84 - 19/05/2014: Corona de Hielo: ¡Acaba conmigo! - ¡Véngame! por Muzashi
 - Cuenca de Sholazar -
 4.4.0  - 16/04/2012: Cuenca de Sholazar: Seguir la corriente por Muzashi
 4.4.1  - 16/04/2012: Cuenca de Sholazar: Atormentar a los badanudillos por Muzashi
@@ -1294,6 +1450,9 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.5.34 - 12/02/2014: Cementerio de Dragones: La mejor de las intenciones por Rincewind
 4.5.35 - 25/02/2014: Cementerio de Dragones: Una estremaunción de añublo por Rincewind
 4.5.36 - 04/03/2014: Cementerio de Dragones: Una batalla acalorada por Rincewind
+4.5.37 - 20/05/2014: Cementerio de Dragones: Un maestro de runas solitario por Muzashi
+4.5.38 - 23/05/2014: Cementerio de Dragones: Monturas frescas por Muzashi
+4.5.39 - 28/05/2014: Cementerio de Dragones: La verdad nos hará libres por Fearless18
 - Zul'Drak -
 4.6.0  - 15/08/2012: Zul'Drak: Horizonte Oscuro - Reunidos por Pitcrawler
 4.6.1  - 26/11/2012: Zul'Drak: La venganza del Rey de la Tormenta spawns de YTDB scripts de CoolerSAI
@@ -1391,6 +1550,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.8.33 - 07/07/2012: Tundra Boreal: El arte de la persuasion por Muzashi
 4.8.34 - 07/07/2012: Tundra Boreal: Carrera a contrarreloj por Inky
 4.8.35 - 07/07/2012: Tundra Boreal: Rescatar a Evanor por Muzashi
+4.8.36 - 27/05/2014: Tundra Boreal: Caza de dracos por Muzashi
 4.8.37 - 08/07/2012: Tundra Boreal: Loot del Fragmento Centelleante por Muzashi
 4.8.38 - 10/07/2012: Tundra Boreal: El Final de Saragosa por Muzashi y Kade
 4.8.39 - 10/07/2012: Tundra Boreal: Reunir a los Rojos por Muzashi
@@ -1413,6 +1573,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.8.56 - 15/04/2013: Tundra Boreal: Llevar a los ancestros a casa por Rincewind
 4.8.57 - 07/11/2013: Tundra Boreal: El emisario por Muzashi
 4.8.58 - 07/11/2013: Tundra Boreal: Viaje en Alfombra Mágica por Muzashi
+4.8.59 - 14/04/2014: Tundra Boreal: Quema en efigie por Rincewind
 - Fiordo Aquilonal -
 4.9.0  - 26/08/2012: Fiordo Aquilonal: Déjalo y Ondéalo por Kroenen
 4.9.1  - 26/08/2012: Fiordo Aquilonal: El Eco de Ymiron por Muzashi
@@ -1443,7 +1604,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.9.26 - 03/11/2012: Fiordo Aquilonal: Deuda de juego por Discovered
 4.9.27 - 03/11/2012: Fiordo Aquilonal: A Jack le gusta su bebida original por Discovered ajustes de Muzashi
 4.9.28 - 03/11/2012: Fiordo Aquilonal: La deuda de un hombre muerto por CoolerSAI y Muzashi, spawns y event de YTDB
-4.9.29 - 03/11/2012: Fiordo Aquilonal: ¡Los muertos se levantan! por Muzashi
+4.9.29 - 03/11/2012: Fiordo Aquilonal: ¡Los muertos se levantan! por Muzashi y Rincewind
 4.9.30 - 05/11/2012: Fiordo Aquilonal: Huargo alfa por Muzashi
 4.9.31 - 10/11/2012: Fiordo Aquilonal: Reliquias imbuidas de relámpagos - El delicado sonido del trueno por Muzashi
 4.9.32 - 10/11/2012: Fiordo Aquilonal: El Rey Durmiente por Muzashi
@@ -1456,7 +1617,10 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.9.39 - 21/03/2013: Fiordo Aquilonal: Misión: Echar pestes por Muzashi
 4.9.40 - 26/02/2014: Fiordo Aquilonal: El yeti de al lado por Rincewind
 4.9.41 - 20/03/2014: Fiordo Aquilonal: Spawn NPC Lunk-tusk (25233) por Gildor
-4.9.42 - 20/03/2014: Fiordo Aquilonal: ¡Los muertos se levantan! por Rincewind
+4.9.42 - 26/05/2014: Fiordo Aquilonal: Aviso: requiere montaje por Pitcrawler y Muzashi
+4.9.43 - 26/05/2014: Fiordo Aquilonal: La flota de El Brisaveloz por joschiwald
+4.9.44 - 26/05/2014: Fiordo Aquilonal: Lo llamamos "Pluma de Acero" por Muzashi
+4.9.45 - 27/05/2014: Fiordo Aquilonal: El botín de Sorlof por Muzashi y Rincewind
 - Terrallende -
 4.10.0 - 17/04/2012: Valle Sombraluna: Deshabilitada Aliado del Ala Abisal (versión de testeo) por Muzashi
 4.10.1 - 18/01/2012: Nagrand: El Círculo de Sangre: el desafío final por Strolch
@@ -1533,6 +1697,10 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.10.72 - 17/03/2014: Bosque de Terokkar: Sangre adversaria por Rincewind
 4.10.73 - 21/03/2014: Marisma de Zangar: A vuelo de pájaro (9718), ahora transforma al player en cuervo por Gildor y Rincewind
 4.10.74 - 24/03/2014: Marisma de Zangar: Desaparecidos en combate por Rincewind
+4.10.75 - 14/04/2014: Península del Fuego Infernal: Espíritus viles por Rincewind
+4.10.76 - 08/05/2014: Marisma de Zangar: ¡Fhwoor da el golpe! por Rincewind
+4.10.77 - 08/05/2014: Tormenta Abisal: Tú, Robot por Muzashi
+4.10.78 - 15/05/2014: Nagrand: Reflejos del alma por Hyxon
 - Kalimdor y Reinos del Este -
 4.11.0 - 19/06/2012: Cuna del Invierno: ¡Señuelo! por Nelegalno
 4.11.1 - 25/06/2012: Vega de Tuercespina: El maestro mayor de la arena por ZxBiohazardZx y Muzashi
@@ -1564,6 +1732,9 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.11.27 - 28/03/2014: Orgrimmar: La sabiduria de Eitrigg por Rincewind
 4.11.28 - 31/03/2014: Stratholme: El medallón de Fe por Rincewind
 4.11.29 - 31/03/2014: Dun Morogh: Preparar el discurso por Rincewind
+4.11.30 - 10/05/2014: Forjaz: A por las ratas del tranvía subterráneo por Lauja, Rincewind y Muzashi
+4.11.31 - 13/05/2014: Cráter de Un'Goro: Busca la fuente por Rincewind
+4.11.32 - 20/05/2014: Forjaz/Orgrimmar: Set de mazmorras 2 por Rincewind
 
 
 ################
@@ -1575,6 +1746,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 5.4  - 19/08/2012: Traducciones en los diálogos de ICC por Abismo
 5.5  - 31/08/2012: Traducciones en los diálogos de Quel'Delar por Abismo y Muzashi
 5.6  - 25/11/2013: Traducciones de las bgs y arenas eliminadas debido a incompatibilidad con lo nuevo de wowrean por Eilo
+5.7  - 14/04/2014: Traducciones en los diálogos de Ulduar por Muzashi
 
 
 ##########
@@ -1662,6 +1834,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 6.84 - 05/12/2013: Fiesta de la cerveza: Boxey Boltspinner, eliminar de creature el que no esta en el evento por Rincewind
 6.85 - 18/01/2014: Cumbre de Rocanegra: Scripteado el evento del logro ¡Leeeeeeeeeeeeeroy! por Sothu
 6.86 - 28/02/2014: Molten Core: Ragnaros: Ahora Ragnaros sera estatico, comportamiento blizzlike, por Efreet
+6.87 - 12/05/2014: Dark Portal: Ahora el tiempo de aparicion de los portales seran los correctos, con pausas en rondas 6-7 y 12-13, por Efreet
+6.88 - 24/05/2014: BlackTemple: Solucionado crash en el cliente cuando Illidan utiliza la spell  Shadow Prison por jar
 
 
 ##########
