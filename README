@@ -312,6 +312,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 1.242 - 20/05/2014: Core/Gameobject: Ampliando distancia desde la cual se puede interactuar con GAMEOBJECT_TYPE_FISHINGNODE
 1.243 - 22/05/2014: Core/Achievements: Implementado un metodo para que todos los players de la banda obtengan los Primeros del Reino si se utiliza DoCompleteAchievement mediante un delay, bloqueando el Primero del Reino tras conseguirlo, parche de Darkman1983, para Rean por Efreet
 1.244 - 24/05/2014: LFG: Corregida la opción del Dungeon finder para salir de la mazmorra cuando se han concluido todos los boss por Jar
+1.245 - 04/06/2014: Pets: Al summonear una pet, si el player ya tenia una del mismo tipo, debe eliminarse e invocar una nueva (excluye pet de Hunter) por Soneh y Souler
 
 
 ########################
@@ -563,6 +564,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.5.9  - 04/03/2014: EyeOfEternity: Al finalizar el Vortex, los player estarán en el centro, y la caida provocará daño por Evef
 2.5.10 - 04/03/2014: EyeOfEternity: Cambiado el nivel minimo para entrar en la instancia por Evef
 2.5.11 - 04/03/2014: EyeOfEternity: Ajustados los datos y vida de Malygos 25n extraido de TC por Evef
+2.5.12 - 01/06/2014: EyeOfEternity: Corregido flag del Exit Portal para que no despawnee al ser usado por Saitama
 - Ulduar -
 2.6.0  - 15/08/2012: Ulduar: Inmunidades generales por DorianGrey
 2.6.1  - 13/02/2012: Ulduar: XT002 Evitando la fase del corazon por Eilo
@@ -827,6 +829,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.268 - 14/05/2014: Ulduar: Añadido check de state a Razorscale para evitar que interrumpa el casteo de una spell si hay otro evento preparado para ejecutarse por Saitama
 2.6.269 - 19/05/2014: Ulduar: Corregido el fallo visual de Razorscale al reiniciarse durante la fase de suelo por Saitama
 2.6.270 - 19/05/2014: Ulduar: Modificado el spawn de los adds de Razorscale buscando un aspecto más blizzlike por Saitama
+2.6.271 - 31/05/2014: Ulduar: Kologarn: Scripteados los logros With Open Arms para modalidades 10/25, por Efreet
+2.6.272 - 03/06/2014: Ulduar: Kologarn: Scripteados los logros Rubble And Roll para modalidades 10/25, por Efreet
 - Vault of Archavon -
 2.7.0  - 08/11/2012: VaultOfArchavon: Corregido loot de Toravon por Muzashi
 2.7.1  - 04/12/2012: VaultOfArchavon: Fix entrada a la instance solo si eres defensor de Wintergrasp por Gildor
@@ -1184,6 +1188,9 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.236 - 08/04/2014: Chaman: Fix spell Maelstrom Weapon, ahora se eliminará el efecto al lanzar las spells correspondientes y no al impactar en el objetivo por Gildor
 3.237 - 08/04/2014: Chaman: Fix spell Elemental Mastery, ahora se eliminará el efecto al lanzar las spells correspondientes y no al impactar en el objetivo por Gildor
 3.238 - 01/05/2014: Rogue: Fix Kidney Shot (8643/408) not proccing Relentless Strikes (58425) after commit 3.230 por Soneh
+3.239 - 29/05/2014: Paladin: Fix spell Hand of Protection, ahora no podrá ser usada sobre otro player si el Paladin esta CCeado por Soneh
+3.240 - 29/05/2014: Mage: Fix spell Shattered Barrier, solo debe procear cuando el Ice Barrier absorbe la cantidad de daño indicada por Soneh
+3.241 - 04/06/2014: Priest: Fix spell Renewed Hope, ahora no pondrá en combate por Soneh
 
 
 #################
@@ -1293,6 +1300,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.2.43 - 22/04/2014: Cumbres Tormentosas: El Coloso de Hierro por Rincewind
 4.2.44 - 01/05/2014: Hijos de Hodir: Krolmir, el Martillo de las Tormentas por Kirkhammett, Malcrom y Muzashi
 4.2.45 - 01/05/2014: Hijos de Hodir: El Bancal de los Creadores por Kirkhammett
+4.2.46 - 30/05/2014: Hijos de Hodir: El juramento terráneo por Muzashi
 - Corona de Hielo -
 4.3.0  - 17/04/2012: Corona de Hielo: Sangre en el agua por Muzashi
 4.3.1  - 03/04/2012: Corona de Hielo: Pura diversión por Muzashi
@@ -1379,6 +1387,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.3.82 - 18/05/2014: Torneo Argenta: A las puertas del enemigo por Muzashi
 4.3.83 - 19/05/2014: Corona de Hielo: Nuevos reclutas por Muzashi
 4.3.84 - 19/05/2014: Corona de Hielo: ¡Acaba conmigo! - ¡Véngame! por Muzashi
+4.3.85 - 30/05/2014: Corona de Hielo: Emparejamientos por Muzashi
+4.3.86 - 30/05/2014: Corona de Hielo: Abundante Generosidad por Muzashi
 - Cuenca de Sholazar -
 4.4.0  - 16/04/2012: Cuenca de Sholazar: Seguir la corriente por Muzashi
 4.4.1  - 16/04/2012: Cuenca de Sholazar: Atormentar a los badanudillos por Muzashi
@@ -1701,6 +1711,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.10.76 - 08/05/2014: Marisma de Zangar: ¡Fhwoor da el golpe! por Rincewind
 4.10.77 - 08/05/2014: Tormenta Abisal: Tú, Robot por Muzashi
 4.10.78 - 15/05/2014: Nagrand: Reflejos del alma por Hyxon
+4.10.79 - 04/06/2014: Valle Sombraluna: La cámara de invocación por Rincewind
 - Kalimdor y Reinos del Este -
 4.11.0 - 19/06/2012: Cuna del Invierno: ¡Señuelo! por Nelegalno
 4.11.1 - 25/06/2012: Vega de Tuercespina: El maestro mayor de la arena por ZxBiohazardZx y Muzashi
@@ -1836,6 +1847,10 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 6.86 - 28/02/2014: Molten Core: Ragnaros: Ahora Ragnaros sera estatico, comportamiento blizzlike, por Efreet
 6.87 - 12/05/2014: Dark Portal: Ahora el tiempo de aparicion de los portales seran los correctos, con pausas en rondas 6-7 y 12-13, por Efreet
 6.88 - 24/05/2014: BlackTemple: Solucionado crash en el cliente cuando Illidan utiliza la spell  Shadow Prison por jar
+6.89 - 31/05/2014: FiordoAquilonal: Nueva script para el logro Friend or Fowl de los pavos de Fiordo, por Efreet
+6.90 - 31/05/2014: CementerioDeDragones: Desbloqueado el logro Defensa Rapida (quest fixeada por Muzashi), por Efreet
+6.91 - 04/06/2014: Festival del solsticio de verano: campamentos reparados por Rincewind
+6.92 - 04/06/2014: Festival del solsticio de verano: Incienso para los agostizos por Rincewind
 
 
 ##########
