@@ -530,6 +530,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.243 - 26/05/2014: TheLichKing evitando que la spell Raging Spirit no realice su efecto por fallar o por inmunidades del objetivo por Saitama
 2.2.244 - 27/05/2014: TheLichKing corregido react state passive de Raging Spirit para que no ataque pets mientras no esté activado por Saitama
 2.2.245 - 27/05/2014: TheLichKing corregido react state passive de Shambling Horror para que no ataque pets mientras no esté activado por Saitama
+2.2.246 - 08/06/2014: IcecrownCitadel: Agregadas las inmunidades en 10 y 25 del NPC Deathbound Ward por Hyxon
 - Naxxramas -
 2.3.1  - 25/03/2013: Naxxramas: Heigan arreglo del Plague Cloud para el logro Safety Dance por Eilo
 2.3.2  - 06/06/2013: Naxxramas: Los cuatro jinetes: permitiendo que el cofre sea seleccionable en dificultad 25 por Dolanpls
@@ -900,10 +901,18 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.10.5 - 29/04/2014: Ahn'Kahet: Corregido el loot para los trash mobs en modo heroico por Hyxon
 2.10.6 - 28/04/2014: Ahn'Kahet: Se agrega el teleport ubicado después del último boss por Jar
 2.10.7 - 09/04/2014: Ahn'Kahet: Se agregan los npc Ahn'kahar Watcher's y se da el soporte para la quest All Things in Good Time, autor Dr-J revisado e implementado por Jar
+2.10.8 - 08/06/2014: Ahn'Kahet: Corregidas las inmunidades en ambas dificultades de Amanitar por Hyxon
+2.10.9 - 08/06/2014: Ahn'Kahet: Corregidas las inmunidades en ambas dificultades de Elder Nadox por Hyxon
+2.10.10 - 08/06/2014: Ahn'Kahet: Corregidas las inmunidades en ambas dificultades de Herald Volazj por Hyxon
+2.10.11 - 08/06/2014: Ahn'Kahet: Corregidas las inmunidades en ambas dificultades de Jedoga Shadowseeker por Hyxon
+2.10.12 - 08/06/2014: Ahn'Kahet: Corregidas las inmunidades en ambas dificultades de Taldaram por Hyxon
 - AzjolNerub -
 2.11.2 - 06/07/2013: AzjolNerub: Cambio de la faccion de Hadronox para evitar que combata con los mobs que le rodean y se cuele en las texturas por Dolanpls
 2.11.3 - 22/04/2014: AzjolNerub: Scripteado completamente el evento de Hadronox y el logro Hadronox Rechazado, por Efreet
 2.11.4 - 01/05/2014: AzjolNerub: Arreglos de xploit y pequeños ajustes en el evento de Hadronox, por Efreet
+2.11.5 - 08/06/2014: AzjolNerub: Corregidas las inmunidades en ambas dificultades de Anub'Arak por Hyxon
+2.11.6 - 08/06/2014: AzjolNerub: Corregidas las inmunidades en ambas dificultades de Hadronox por Hyxon
+2.11.7 - 08/06/2014: AzjolNerub: Corregidas las inmunidades en ambas dificultades de Krik'thir the Gatewatcher por Hyxon
 - CullingOfStratholme -
 2.12.1 - 17/12/2011: CullingOfStratholme: Arthas no desaparece a distancia por Eilo
 2.12.4 - 19/07/2012: CullingOfStratholme: Infinite Corruptor added and improved script/achievements por Eilo
@@ -913,6 +922,11 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.12.8 - 04/02/2013: CullingOfStratholme: Quitadas las flags de inmune en la 2ª oleada cuando empezamos a seguir a arthas para evitar el bug por Dolanpls
 2.12.9 - 09/11/2013: CullingOfStratholme: Corregido credito de la misión Una escolta real por Rincewind
 2.12.10- 05/02/2014: CullingOfStratholme: Desarrollo del logro "Festin de Zombies" por Efreet
+2.12.11 - 08/06/2014: CullingOfStratholme: Corregidas las inmunidades en ambas dificultades de Chronolord Epoch por Hyxon
+2.12.12 - 08/06/2014: CullingOfStratholme: Corregidas las inmunidades en ambas dificultades de Infinite Corruptor por Hyxon
+2.12.13 - 08/06/2014: CullingOfStratholme: Corregidas las inmunidades en ambas dificultades de Malganis por Hyxon
+2.12.14 - 08/06/2014: CullingOfStratholme: Corregidas las inmunidades en ambas dificultades de Meathook por Hyxon
+2.12.15 - 08/06/2014: CullingOfStratholme: Corregidas las inmunidades en ambas dificultades de Salramm the Fleshcrafter por Hyxon
 - TrialOfTheChampion -
 2.13.1 - 15/08/2012: TrialOfTheChampions: Reimplementacion y soporte spells por Souler, mejoras, reordenacion y complementos por Eilo
 2.13.2 - 15/04/2014: TrialOfTheChampions: Añadido el GOSSIP faltante para evitar todas las presentaciones y realizar directamente el encuentro 1, por Efreet
@@ -925,10 +939,19 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.14.6 - 06/05/2014: Drak'Tharon: Novos añadido spell script y funcionamiento de la spell Summon Minions en la modalidad 5H, por Efreet
 2.14.7 - 29/04/2014: Drak'Tharon: Corregido el loot para los trash mobs en modo heroico por Hyxon
 2.14.8 - 08/05/2014: Drak'Tharon: Novos corregidos los GOBs y sus visuales durante todo el combate con efectos blizzlike, por Efreet
+2.14.9 - 08/06/2014: Drak'Tharon: Corregidas las inmunidades en ambas dificultades de King Dred por Hyxon
+2.14.10 - 08/06/2014: Drak'Tharon: Corregidas las inmunidades en ambas dificultades de Novos the Summoner por Hyxon
+2.14.11 - 08/06/2014: Drak'Tharon: Corregidas las inmunidades en ambas dificultades de The Prophet Tharonja por Hyxon
+2.14.12 - 08/06/2014: Drak'Tharon: Corregidas las inmunidades en ambas dificultades de Trollgore por Hyxon
 - Gundrak -
 2.15.1 - 09/08/2011: Gundrak: Colossus desactiva el aura de MojoVolley al morir por Odyssey
 2.15.2 - 16/08/2012: Gundrak: Colossus eliminado doble loot por Eilo
 2.15.3 - 29/04/2014: Gundrak: Corregido el loot para los trash mobs en modo heroico por Hyxon
+2.15.4 - 08/06/2014: Gundrak: Corregidas las inmunidades en ambas dificultades de Drakkari Colossus por Hyxon
+2.15.5 - 08/06/2014: Gundrak: Corregidas las inmunidades de Eck the Ferocius por Hyxon
+2.15.6 - 08/06/2014: Gundrak: Corregidas las inmunidades en ambas dificultades de Galdarah por Hyxon
+2.15.7 - 08/06/2014: Gundrak: Corregidas las inmunidades en ambas dificultades de Moorabi por Hyxon
+2.15.8 - 08/06/2014: Gundrak: Corregidas las inmunidades en ambas dificultades de Sladran por Hyxon
 - HallsOfReflection -
 2.16.1 - 08/10/2011: HallsOfReflection: Reimplementacion y añadido LichKing por Odyssey, editada por Eilo
 2.16.2 - 07/11/2012: HallsOfReflection: Fix waves, ahora no se juntara una oleada con otra al pasar por la zona del altar por Gildor
@@ -988,18 +1011,36 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.21.4 - 22/03/2013: TheVioletHold: Ichoron lanzara Water Blast antes de desaparecer por Dolanpls.
 2.21.5 - 25/03/2013: TheVioletHold: Añadidas las 2 habilidades faltantes a Moragg por Dolanpls.
 2.21.6 - 29/04/2014: TheVioletHold: Corregido el loot para los trash mobs en modo heroico por Hyxon
+2.21.7 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Cyanigosa por Hyxon
+2.21.8 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Erekem por Hyxon
+2.21.9 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Ichoron por Hyxon
+2.21.10 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Lavanthor por Hyxon
+2.21.11 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Moragg por Hyxon
+2.21.12 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Xevozz por Hyxon
+2.21.13 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Zuramat the Obliterator por Hyxon
 - HallsOfLightning -
 2.22.1 - 24/10/2013: HallOfLightning: Hall of the Watchers añadido AreaTrigger para la invocacion de NPCs Titanium Thunderer y Titanium Siegebreaker por Efreet
 2.22.2 - 12/02/2014: HallOfLightning: Hall of the Watchers añadido un sistema por variables para controlar el numero de NPCs que spawnea de forma mas blizzlike, por Efreet
+2.22.3 - 08/06/2014: HallOfLightning: Corregidas las inmunidades en ambas dificultades de General Bjarngrim por Hyxon
+2.22.4 - 08/06/2014: HallOfLightning: Corregidas las inmunidades en ambas dificultades de Ionar por Hyxon
+2.22.5 - 08/06/2014: HallOfLightning: Corregidas las inmunidades en ambas dificultades de Loken por Hyxon
+2.22.6 - 08/06/2014: HallOfLightning: Corregidas las inmunidades en ambas dificultades de Volkhan por Hyxon
 - HallsOfStone -
 2.23.1 - 20/07/2012: HallsOfStone: TribunalOfAegis Added motionmaster to summons to avoid exploits by Eilo
 2.23.2 - 16/08/2012: HallsOfStone: adding some texts by Eilo
 2.23.3 - 07/01/2013: HallsOfStone: Tribunalevent añadidos los AI a trash por Evef.
 2.23.4 - 07/11/2013: HallsOfStone: Fixeado el reset del evento del Tribunal para que se reinicie cuando Brann muere por Efreet
 2.23.5 - 29/04/2014: HallsOfStone: Corregido el loot para los trash mobs en modo heroico por Hyxon
+2.23.6 - 08/06/2014: HallsOfStone: Corregidas las inmunidades en ambas dificultades de Krystallus por Hyxon
+2.23.7 - 08/06/2014: HallsOfStone: Corregidas las inmunidades en ambas dificultades de Maiden of Grief por Hyxon
+2.23.8 - 08/06/2014: HallsOfStone: Corregidas las inmunidades en ambas dificultades de Sjonnir the Ironshaper por Hyxon
 - UtgardeKeep -
 2.24.1 - 01/10/2011: UtgardeKeep: Ingvar permitiendo que se le pueda atacar en el reseteo por Eilo
 2.24.2 - 30/10/2013: UtgardeKeep: Fixeado el exploit que permitia saltarse las forjas del Horno del Odio por Efreet
+2.24.3 - 08/06/2014: UtgardeKeep: Corregidas las inmunidades en ambas dificultades de Dalronn the Controller por Hyxon
+2.24.4 - 08/06/2014: UtgardeKeep: Corregidas las inmunidades en ambas dificultades de Ingvar the Plunderer por Hyxon
+2.24.5 - 08/06/2014: UtgardeKeep: Corregidas las inmunidades en ambas dificultades de Prince Keleseth por Hyxon
+2.24.6 - 08/06/2014: UtgardeKeep: Corregidas las inmunidades en ambas dificultades de Skarvald the Constructor por Hyxon
 - UtgardePinnacle -
 2.25.1 - 25/12/2011: UtgardePinnacle: Svala ahora es atacable con normalidad por Eilo
 2.25.3 - 16/08/2012: UtgardePinnacle: Skadi fixed encounter phase two by Eilo
