@@ -531,6 +531,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.244 - 27/05/2014: TheLichKing corregido react state passive de Raging Spirit para que no ataque pets mientras no esté activado por Saitama
 2.2.245 - 27/05/2014: TheLichKing corregido react state passive de Shambling Horror para que no ataque pets mientras no esté activado por Saitama
 2.2.246 - 08/06/2014: IcecrownCitadel: Agregadas las inmunidades en 10 y 25 del NPC Deathbound Ward por Hyxon
+2.2.247 - 11/06/2014: TheLichKing las Val'kyr Shadowguard no deben despawnear en el cambio de fase si aún llevan a un jugador por Saitama
 - Naxxramas -
 2.3.1  - 25/03/2013: Naxxramas: Heigan arreglo del Plague Cloud para el logro Safety Dance por Eilo
 2.3.2  - 06/06/2013: Naxxramas: Los cuatro jinetes: permitiendo que el cofre sea seleccionable en dificultad 25 por Dolanpls
@@ -784,7 +785,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.222 - 20/04/2014: Ulduar: Corregida la spell Stone Grip de Kologarn, ahora la mecánica que envuelve dicha spell será de forma Blizzlike por Jar
 2.6.223 - 20/04/2014: Ulduar: Corregido el inicio del evento contra Kologarn por Jar
 2.6.224 - 24/04/2014: Ulduar: Corregido el max targets del Brain Link de YoggSaron por Evef
-2.6.225 - 24/04/2014: Ulduar: En la 3º fase de YoggSaron no saldrán Omnious Clouds por Evef
+2.6.225 - 12/06/2014: Ulduar: Los Omnious Cloud ya no deberán salir en ninguna fase más que en la primera por Evef
 2.6.226 - 25/04/2014: Ulduar: YoggSaron loteará correctamente en cualquier modalidad de 10 por Evef
 2.6.227 - 25/04/2014: Ulduar: YoggSaron loteará correctamente en cualquier modalidad de 25 por Evef
 2.6.228 - 04/05/2014: Ulduar: Ahora es posible hacerle daño a las torretas de defensa en Flame Leviathan por Jar
@@ -832,6 +833,9 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.270 - 19/05/2014: Ulduar: Modificado el spawn de los adds de Razorscale buscando un aspecto más blizzlike por Saitama
 2.6.271 - 31/05/2014: Ulduar: Kologarn: Scripteados los logros With Open Arms para modalidades 10/25, por Efreet
 2.6.272 - 03/06/2014: Ulduar: Kologarn: Scripteados los logros Rubble And Roll para modalidades 10/25, por Efreet
+2.6.273 - 10/06/2014: Ulduar: Implementación para improvisar el aspecto blizzlike del evento del encuentro de Razorscale por Saitama
+2.6.274 - 12/06/2014: Ulduar: La spell Brain Link ya no afectará a los player que se encuentren en la phase del cerebro por Evef
+2.6.275 - 12/06/2014: Ulduar: Las Living Constellation se activarán correctamente por Evef
 - Vault of Archavon -
 2.7.0  - 08/11/2012: VaultOfArchavon: Corregido loot de Toravon por Muzashi
 2.7.1  - 04/12/2012: VaultOfArchavon: Fix entrada a la instance solo si eres defensor de Wintergrasp por Gildor
@@ -913,6 +917,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.11.5 - 08/06/2014: AzjolNerub: Corregidas las inmunidades en ambas dificultades de Anub'Arak por Hyxon
 2.11.6 - 08/06/2014: AzjolNerub: Corregidas las inmunidades en ambas dificultades de Hadronox por Hyxon
 2.11.7 - 08/06/2014: AzjolNerub: Corregidas las inmunidades en ambas dificultades de Krik'thir the Gatewatcher por Hyxon
+2.11.8 - 08/06/2014: AzjolNerub: Corregido bug de Hadronox y el aggro con los players, por Efreet
 - CullingOfStratholme -
 2.12.1 - 17/12/2011: CullingOfStratholme: Arthas no desaparece a distancia por Eilo
 2.12.4 - 19/07/2012: CullingOfStratholme: Infinite Corruptor added and improved script/achievements por Eilo
@@ -1018,6 +1023,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.21.11 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Moragg por Hyxon
 2.21.12 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Xevozz por Hyxon
 2.21.13 - 08/06/2014: TheVioletHold: Corregidas las inmunidades en ambas dificultades de Zuramat the Obliterator por Hyxon
+2.21.14 - 10/06/2014: TheVioletHold: Scripteados los cristales de defensa para la instance, parche original de profPlum, por Efreet
 - HallsOfLightning -
 2.22.1 - 24/10/2013: HallOfLightning: Hall of the Watchers añadido AreaTrigger para la invocacion de NPCs Titanium Thunderer y Titanium Siegebreaker por Efreet
 2.22.2 - 12/02/2014: HallOfLightning: Hall of the Watchers añadido un sistema por variables para controlar el numero de NPCs que spawnea de forma mas blizzlike, por Efreet
@@ -1892,6 +1898,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 6.90 - 31/05/2014: CementerioDeDragones: Desbloqueado el logro Defensa Rapida (quest fixeada por Muzashi), por Efreet
 6.91 - 04/06/2014: Festival del solsticio de verano: campamentos reparados por Rincewind
 6.92 - 04/06/2014: Festival del solsticio de verano: Incienso para los agostizos por Rincewind
+6.93 - 11/06/2014: Actualizado el calendario de Eventos del mundo de 2014 por Winnie
 
 
 ##########
@@ -1916,5 +1923,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 7.22 - 12/08/2013: Nuevos textos para el started! de bg por Eilo
 7.23 - 31/10/2013: Torneo PvP en Hyjal por Shorak
 7.24 - 31/10/2013: Disables de spells en zonas de eventos por Shorak y Muzashi
+7.25 - 10/06/2014: World of WarKarts: Se agrega soporte para iniciar y finalizar cada carrera por Jar
 
 
