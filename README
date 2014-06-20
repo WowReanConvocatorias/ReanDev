@@ -139,6 +139,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 0.111 - 07/09/2013: FadeOut menas/plantas/botin de mundo no loteadas completamente original por Jenifer25 implementacion por Eilo
 0.112 - 24/02/2014: Groups, al desconectar no se abandonará el grupo por Evef
 0.113 - 20/03/2014: Nuevo appender (44) LOG_FILTER_GUIDLOG para control de creature guids por Evef
+0.114 - 14/06/2014: Modificados Auth y World para mostrar el nombre del emulador por Evef
 
 
 ###############
@@ -532,24 +533,34 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.245 - 27/05/2014: TheLichKing corregido react state passive de Shambling Horror para que no ataque pets mientras no esté activado por Saitama
 2.2.246 - 08/06/2014: IcecrownCitadel: Agregadas las inmunidades en 10 y 25 del NPC Deathbound Ward por Hyxon
 2.2.247 - 11/06/2014: TheLichKing las Val'kyr Shadowguard no deben despawnear en el cambio de fase si aún llevan a un jugador por Saitama
+2.2.248 - 12/06/2014: TheLichKing Defile ya no dañará a jugadores que estén en vehículos por Saitama
+2.2.249 - 12/06/2014: TheLichKing los jugadores capturados por una Val'kyr Shadowguard serán afectados por hechizos aliados y enemigos por Saitama
+2.2.250 - 13/06/2014: Rotface añadidas condiciones faltantes para evitar fallos en la spell Ooze Flood por Saitama
+2.2.251 - 13/06/2014: Precious ahora sus zombies no despawnearán cuando muera por Saitama
+2.2.252 - 13/06/2014: Precious añadido script a los Plagued Zombies por Saitama
+2.2.253 - 13/06/2014: Precious ajustada la velocidad de movimiento de los Plagued Zombies intentando acercarse a un valor blizzlike por Saitama
+2.2.254 - 13/06/2014: Precious corregido tiempo de reutilización de Decimate por Saitama
+2.2.255 - 13/06/2014: TheLichKing ajustada la posición de Val'kyr Shadowguard al cargar a su objetivo para que sea más blizzlike por Saitama
 - Naxxramas -
 2.3.1  - 25/03/2013: Naxxramas: Heigan arreglo del Plague Cloud para el logro Safety Dance por Eilo
 2.3.2  - 06/06/2013: Naxxramas: Los cuatro jinetes: permitiendo que el cofre sea seleccionable en dificultad 25 por Dolanpls
-2.3.3  - 28/11/2013: Naxxramas: Los mini-bosses del encuentro contra Thaddius reapareceran correctamente al wipear la banda por Sothu
 2.3.4  - 03/01/2013: Naxxramas: Razuvious el Unbalancing Strike debe pegar mucho mas, spell adecuada por Eilo
 2.3.5  - 03/01/2013: Naxxramas: Razuvious spawn faltante de Death Knight Understudy por Eilo
 2.3.6  - 25/02/2014: Naxxramas: Gluth: Ahora los zombies se moveran hacia Gluth y si estan demasiado cerca, Gluth los devorara curandose su porcentaje de vida, por Efreet
 2.3.7  - 28/02/2014: Naxxramas: Thaddius: Ahora se reseteara de forma correcta si hay wipe, evitando que nada mas entrar en la sala o combate Thaddius lance los orbes de relampago, por Efreet
 2.3.8  - 03/03/2014: Naxxramas: Añadidos los GOs (portales y sus visuales) al final de cada arrabal y al incio de la instance para que teleporten a los jugadores al inicio de la ciudadela cuando acaban con el respectivo boss, por Efreet
 2.3.9  - 03/03/2014: Naxxramas: Añadidos los GOs 'orbe de naxxramas' para acceder a la zona de Sapphiron y eliminados el area trigger anterior, dejandolo de forma blizzlike, por Efreet
-2.3.11 - 09/03/2014: Naxxramas: Añadidos los GOs Tesla Coil para los bosses Feugen y Stalagg y sus principales spells/emotes, por Efreet
-2.3.12 - 13/03/2014: Naxxramas: Thaddius: mejora de los estados de los Teslas y casteo de Shock si sacamos de las zonas a Feugen y Stalagg, por Efreet
+2.3.11 - 09/03/2014: Naxxramas: Añadidos los GOs y triggers para los Tesla Coil necesarios en los bosses Feugen y Stalagg, por Efreet
 2.3.13 - 13/03/2014: Naxxramas: Faerlina: Agregado el GOB web que impide salir de la zona de combate del boss mientras este esta activo, por Efreet
 2.3.14 - 13/03/2014: Naxxramas: Ahora los adds Embalming Slime castearan su spell Embalming Cloud, por Efreet
 2.3.15 - 01/04/2014: Naxxramas: Grobbulus: Ahora se aggrearan todos los mobs de la sala de Grobbulus al iniciar el ataque con el, por Efreet
 2.3.16 - 01/04/2014: Naxxramas: Remendejo: Ahora se aggrearan todos los mobs de la sala de Remendejo al iniciar el ataque con el, por Efreet
 2.3.17 - 01/04/2014: Naxxramas: Ahora se aggrearan todos los oozoes de la sala anterior a Remendejo al iniciar el ataque con alguno de ellos, por Efreet
 2.3.18 - 05/05/2014: Naxxramas: El Toxic Tunnel luego de Grobbulus ya no dejará a los players en combat por Saitama
+2.3.19 - 14/06/2014: Naxxramas: Thaddius: Se agrega el script correspondiente para las auras Feugen tesla passive y Stalag tesla passive por Jar
+2.3.20 - 14/06/2014: Naxxramas: Thaddius: Se agrega el script correspondiente a la spell Shock Overload por Jar
+2.3.21 - 15/06/2014: Naxxramas: Thaddius: Se agrega el  script para los Tesla Coil por Jar
+2.3.22 - 15/06/2014: Naxxramas: Thaddius: Ahora Stalagg y Feugen entraran en combate de forma simultánea por Jar
 - Onyxia'sLair -
 2.4.1  - 28/03/2011: Onyxia'sLair: Immunities on script by Souler
 2.4.2  - 04/03/2014: Onyxia'sLair: Actualizadas inmunidades por db a Onyxia en dificultad 10 jugadores por Hyxon
@@ -836,6 +847,11 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.273 - 10/06/2014: Ulduar: Implementación para improvisar el aspecto blizzlike del evento del encuentro de Razorscale por Saitama
 2.6.274 - 12/06/2014: Ulduar: La spell Brain Link ya no afectará a los player que se encuentren en la phase del cerebro por Evef
 2.6.275 - 12/06/2014: Ulduar: Las Living Constellation se activarán correctamente por Evef
+2.6.276 - 13/06/2014: Ulduar: La spell Psychosis en modalidad 25 reducirá correctamente Sanity por Evef
+2.6.277 - 13/06/2014: Uludar: Evitando que Algalon se reinicie cuando le venga en gana por Evef
+2.6.278 - 14/06/2014: Ulduar: Psychosis en su modalidad de 25 afectará a 3 targets simultaneos por Evef
+2.6.279 - 18/06/2014: Ulduar: Freya, ahora los logros de Toca Madera (tanto en 10 como en 25, en total los 6 logros) se completaran de forma global y siempre que se cumplan las condiciones, por Efreet
+2.6.280 - 19/06/2014: Ulduar: Kologarn, scripteado el logro "Si las Miradas Matasen..." en dificultades 10 y 25, por Efreet
 - Vault of Archavon -
 2.7.0  - 08/11/2012: VaultOfArchavon: Corregido loot de Toravon por Muzashi
 2.7.1  - 04/12/2012: VaultOfArchavon: Fix entrada a la instance solo si eres defensor de Wintergrasp por Gildor
@@ -1097,11 +1113,9 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.59 - 13/07/2012: Druid: Survival Instincts (61336) should only usable on cat or bear forms por avalonfr
 3.60 - 13/07/2012: Hunter: Tame Beast (1515) should have some basic checks, due to some db errors por avalonfr
 3.61 - 13/07/2012: Warrior: Deep wounds (12867) prevented from exceeding more than 20k damage, temp fix for really high damage when server has high diff
-3.69 - 16/07/2012: Paladin: Blessing of Sanctuary (20911) and Blessing of Kings (20217) shouldn't stack
 3.71 - 18/07/2012: Shaman: Grounding totem (8177) should also absorb polymorph effect por Vincent-Michael
 3.75 - 22/07/2012: Druid: fix King of the Jungle (48495) was broken by a kandera's commit por Hispano
 3.76 - 29/09/2012: Mago: Hack fix for arcane blast damage buff applied before spell that triggered it deals damage por Xanvial
-3.77 - 30/09/2012: Warrior: Fixed stacking behavior for warrior's Enrage effects from talents by tobmaps
 3.78 - 01/10/2012: Warlock: Fixed talent Improved Succubus by tobmaps
 3.79 - 01/10/2012: Warlock: Fixed glyph of succubus by Vincent-Michael
 3.80 - 02/10/2012: DK: Fix Ebon Plaguebringer/Crypt Fever stacking by Xanvial
@@ -1138,7 +1152,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.116 - 03/12/2012: Druida: Fix spell Infected Wounds, ahora se podrá aplicar al objetivo que tiene/tenía el efecto de Thunder Clap por Gildor
 3.117 - 04/12/2012: Wintergrasp: Fix spell Flame Breath (Wintergrasp Catapult), ahora no aumentará su daño en función del nivel por Gildor
 3.118 - 07/12/2012: Mago: Fix spell Ralentizar, ahora durará en PvP 10 segundos y no 15 por elecyb
-3.119 - 07/12/2012: Chaman: Fix Glyph of Earth Shield, ahora aumentará la sanación del escudo de tierra al portador del escudo y no solo cuando lo lleva el chaman por elecyb
 3.120 - 08/12/2012: DK: Fix Spell Death Coil, ahora su daño aumentará con el talento Impurity y su sanación hará el cálculo correcto por Gildor
 3.121 - 14/12/2012: DK: Fix Spell Chilblains, ahora su efecto se eliminará si se disipa Frost Fever por elecyb y arreglado por Gildor
 3.122 - 15/12/2012: DK: Fix Spell Blood-Caked Blade, ahora hará el daño correcto con enfermedades por Retriman
@@ -1179,8 +1192,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.162 - 09/04/2013: Paladin: Fix spell Guarded by the Light, ahora hará tambien su efecto cuando el golpe del paladin se absorba o se bloquee por Gildor
 3.163 - 09/04/2013: DK: Fix spell Anti-magic Shell, ahora no será inmune a Volatile Ooze Adhesive (ICC putricide) por Gildor
 3.164 - 05/05/2013: Warrior: Fix spell Bladestorm, ahora no será un debuff por Gildor
-3.165 - 24/05/2013: Stacks: Fix Mana Spring Totem (Shaman) and Blessing of Wisdom/Greater Blessing of Wisdom (Paladin), ahora no se acumularán por Gildor
-3.166 - 28/05/2013: Stacks: Fix Totem of Wrath/Flametongue Totem (Shaman) and Demonic Pact (Warlock), ahora no se acumularán por Gildor
 3.168 - 07/06/2013: Mago: Fix spell Hot Streak, ahora se eliminará al lanzar piroexplosión y no al impactar al objetivo con ella por Gildor
 3.169 - 12/06/2013: DK: Fix spell Dark Command, ahora al usar la spell podrá activar los encantamientos de runas de las armas del DK por Gildor
 3.172 - 12/07/2013: Dk/Pet: Cuando la pet de dk aparece en el mapa, tiene que esperar hasta que la animacion termine para moverse por Retriman
@@ -1197,7 +1208,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.187 - 11/08/2013: Priest: Fix spell Avoidance (Pets), ahora Shadowfiend obtendra Avoidance de forma pasiva por Gildor
 3.188 - 11/08/2013: Druida: Fix spell Avoidance (Pets), ahora el Antárbol obtendra Avoidance de forma pasiva por Gildor
 3.189 - 19/08/2013: Sacer: Fix del levitar despues de usar un teleport o entrar a instance por Eilo
-3.191 - 12/09/2013: Stacks: Fix Sanctified Retribution (Paladin) vs Ferocious Inspiration (Hunter) vs Arcane Empowerment (Mage), ahora no se acumularán por Gildor
 3.194 - 26/09/2013: Hunter: Fix spell Steady Shot, corregido su tiempo de casteo por Gildor
 3.195 - 28/09/2013: Stacks: Fix Enrage (Warrior), ahora no sobrescribirá a Death Wish (Warrior) por Gildor
 3.196 - 28/09/2013: Brujo: Fix Spell Haunt, ahora curará tambien todo el daño crítico causado por Gildor
@@ -1238,6 +1248,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.239 - 29/05/2014: Paladin: Fix spell Hand of Protection, ahora no podrá ser usada sobre otro player si el Paladin esta CCeado por Soneh
 3.240 - 29/05/2014: Mage: Fix spell Shattered Barrier, solo debe procear cuando el Ice Barrier absorbe la cantidad de daño indicada por Soneh
 3.241 - 04/06/2014: Priest: Fix spell Renewed Hope, ahora no pondrá en combate por Soneh
+3.242 - 17/06/2014: Chaman: Fix spell Earth Shield, ahora funcionará el cooldown interno tambien en NPCs por joschiwald y modificado por Gildor
 
 
 #################
@@ -1793,6 +1804,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.11.30 - 10/05/2014: Forjaz: A por las ratas del tranvía subterráneo por Lauja, Rincewind y Muzashi
 4.11.31 - 13/05/2014: Cráter de Un'Goro: Busca la fuente por Rincewind
 4.11.32 - 20/05/2014: Forjaz/Orgrimmar: Set de mazmorras 2 por Rincewind
+4.11.33 - 12/06/2014: Sierra Espolón: Ordenes de Gerenzo por Hyxon y Muzashi
 
 
 ################
