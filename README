@@ -314,6 +314,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 1.243 - 22/05/2014: Core/Achievements: Implementado un metodo para que todos los players de la banda obtengan los Primeros del Reino si se utiliza DoCompleteAchievement mediante un delay, bloqueando el Primero del Reino tras conseguirlo, parche de Darkman1983, para Rean por Efreet
 1.244 - 24/05/2014: LFG: Corregida la opción del Dungeon finder para salir de la mazmorra cuando se han concluido todos los boss por Jar
 1.245 - 04/06/2014: Pets: Al summonear una pet, si el player ya tenia una del mismo tipo, debe eliminarse e invocar una nueva (excluye pet de Hunter) por Soneh y Souler
+1.246 - 03/08/2014: Core/Unit: el efecto SPELL_AURA_USE_NORMAL_MOVEMENT_SPEED solo afectará a jugadores o npc's que no sean bosses de instancias por Saitama
+1.247 - 19/08/2014: Core/CreatureText: Reparados los mensajes del tipo RAID_BOSS_WHISPER y MONSTER_WHISPER por Saitama
 
 
 ########################
@@ -560,6 +562,13 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.274 - 11/07/2014: TheLichKing añadido script a Vile Spirit por Saitama
 2.2.275 - 11/07/2014: Rotface corregido el react state passive de Big Ooze por Saitama
 2.2.276 - 11/07/2014: TheLichKing añadido script a Drudge Ghoul para que respete el react passive por Saitama
+2.2.277 - 26/07/2014: GunshipBattle corregido el daño de Rending Throw por Saitama
+2.2.278 - 29/07/2014: TheLichKing actualizadas inmunidades a los Vile Spirit por Saitama
+2.2.279 - 12/08/2014: Sindragosa aumentado el rango para que entre en combate luego de matar a Rimefang y Spinestalker por Saitama
+2.2.280 - 12/08/2014: LadyDeathwhisper reiniciará su tabla de amenaza al entrar en segunda fase por Saitama
+2.2.281 - 12/08/2014: GunshipBattle corregido el uso de Elite en Skybreaker Sergeant y Kor'kron Sergeant por Saitama
+2.2.282 - 12/08/2014: GunshipBattle implementado el uso de Elite de Skybreaker Marine y Kor'kron Reaver por Saitama
+2.2.283 - 14/08/2014: ProfessorPutricide implementado el evento de Airlock antes de entrar a Putricide's Laboratory of Alchemical Horrors and Fun por Saitama
 - Naxxramas -
 2.3.1  - 25/03/2013: Naxxramas: Heigan arreglo del Plague Cloud para el logro Safety Dance por Eilo
 2.3.2  - 06/06/2013: Naxxramas: Los cuatro jinetes: permitiendo que el cofre sea seleccionable en dificultad 25 por Dolanpls
@@ -582,6 +591,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.3.22 - 15/06/2014: Naxxramas: Thaddius: Ahora Stalagg y Feugen entraran en combate de forma simultánea por Jar
 2.3.23 - 21/06/2014: Naxxramas: Thaddius: Corregida la spell Magnetic Pull por Jar
 2.3.24 - 08/07/2014: Naxxramas: Razuvious: Corregido el daño base por Hyxon
+2.3.25 - 07/08/2014: Naxxramas: Remendejo: Scripteado el evento de los living poison en el boss Remendejo, por Efreet
 - Onyxia'sLair -
 2.4.1  - 28/03/2011: Onyxia'sLair: Immunities on script by Souler
 2.4.2  - 04/03/2014: Onyxia'sLair: Actualizadas inmunidades por db a Onyxia en dificultad 10 jugadores por Hyxon
@@ -601,7 +611,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.5.12 - 01/06/2014: EyeOfEternity: Corregido flag del Exit Portal para que no despawnee al ser usado por Saitama
 - Ulduar -
 2.6.0  - 15/08/2012: Ulduar: Inmunidades generales por DorianGrey
-2.6.1  - 13/02/2012: Ulduar: XT002 Evitando la fase del corazon por Eilo
 2.6.2  - 06/05/2012: Ulduar: Mimiron nueva script, original por Darkman, actualizada por Eilo
 2.6.3  - 07/05/2012: Ulduar: Thorim nueva script, original por Darkman, mejoras y actualizaciones por Eilo
 2.6.4  - 07/05/2012: Ulduar: YoggSaron nueva script, original por Darkman, mejoras por Shaco, actualizaciones por Eilo
@@ -892,6 +901,15 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.6.297 - 11/07/2014: Ulduar: Algalon corregido visual del área alrededor de los Black Hole por Saitama
 2.6.298 - 12/07/2014: Ulduar: Algalon corregido el punto de spawn de Black Hole al morir Collapsing Star por Saitama
 2.6.299 - 12/07/2014: Ulduar: Algalon dado un aspecto más blizzlike al spawn de de Black Hole por Saitama
+2.6.300 - 19/07/2014: Ulduar: Lightning Door después de Leviathan estará cerrada mientras el boss no haya sido derrotado por Jar
+2.6.301 - 26/07/2014: Ulduar: Algalon ahora aplicará el debuff Black Hole cuando cambia de fase a un jugador por cualquier medio por Saitama
+2.6.302 - 27/08/2014: Ulduar: Los brazos de Kologarn ya no adquirirán un objetivo ni atacarán por Saitama
+2.6.303 - 27/08/2014: Ulduar: Los Armsweep Stalker y Rubble Stalker no atacarán a los jugadores por Saitama
+2.6.304 - 05/08/2014: Ulduar: El Runic Colossus del encuentro de Thorim solo se activará si es atacado por un jugador por Saitama
+2.6.305 - 20/08/2014: Ulduar: Desarmador XT002 ahora se podra golpear a su corazon sin problemas por Efreet
+2.6.306 - 20/08/2014: Ulduar: Desarmador XT002 reajustados los tiempos del spell Tympanic Tantrum por Efreet
+2.6.307 - 20/08/2014: Ulduar: Desarmador XT002 fixeado el NPC Void Zone, sus eventos y sus daños en modo dificil por Efreet
+2.6.308 - 20/08/2014: Ulduar: Desarmador XT002 fixeado el NPC Life Spark, sus eventos y sus daños en modo dificil por Efreet
 - Vault of Archavon -
 2.7.0  - 08/11/2012: VaultOfArchavon: Corregido loot de Toravon por Muzashi
 2.7.1  - 04/12/2012: VaultOfArchavon: Fix entrada a la instance solo si eres defensor de Wintergrasp por Gildor
@@ -1411,6 +1429,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.2.44 - 01/05/2014: Hijos de Hodir: Krolmir, el Martillo de las Tormentas por Kirkhammett, Malcrom y Muzashi
 4.2.45 - 01/05/2014: Hijos de Hodir: El Bancal de los Creadores por Kirkhammett
 4.2.46 - 30/05/2014: Hijos de Hodir: El juramento terráneo por Muzashi
+4.2.47 - 20/07/2014: Hijos de Hodir: La venganza por Muzashi
 - Corona de Hielo -
 4.3.0  - 17/04/2012: Corona de Hielo: Sangre en el agua por Muzashi
 4.3.1  - 03/04/2012: Corona de Hielo: Pura diversión por Muzashi
@@ -1496,10 +1515,11 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.3.81 - 09/04/2014: Corona de Hielo: El Pináculo de los Cruzados por Muzashi
 4.3.82 - 18/05/2014: Torneo Argenta: A las puertas del enemigo por Muzashi
 4.3.83 - 19/05/2014: Corona de Hielo: Nuevos reclutas por Muzashi
-4.3.84 - 19/05/2014: Corona de Hielo: ¡Acaba conmigo! - ¡Véngame! por Muzashi
+4.3.84 - 19/05/2014: Corona de Hielo: ¡Acaba conmigo! - ¡Véngame! por Muzashi e Hyxon
 4.3.85 - 30/05/2014: Corona de Hielo: Emparejamientos por Muzashi
 4.3.86 - 30/05/2014: Corona de Hielo: Abundante Generosidad por Muzashi
-4.3.87 - 20/06/2014: Corona de Hielo: El frente roto por Hyxon
+4.3.87 - 12/07/2014: Corona de Hielo: El destino de Malasangre por Muzashi
+4.3.88 - 20/07/2014: Corona de Hielo: Kilohercio - Tecnología verde por Muzashi
 - Cuenca de Sholazar -
 4.4.0  - 16/04/2012: Cuenca de Sholazar: Seguir la corriente por Muzashi
 4.4.1  - 16/04/2012: Cuenca de Sholazar: Atormentar a los badanudillos por Muzashi
@@ -1574,6 +1594,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.5.37 - 20/05/2014: Cementerio de Dragones: Un maestro de runas solitario por Muzashi
 4.5.38 - 23/05/2014: Cementerio de Dragones: Monturas frescas por Muzashi
 4.5.39 - 28/05/2014: Cementerio de Dragones: La verdad nos hará libres por Fearless18
+4.5.40 - 17/07/2014: Cementerio de Dragones: La Caverna Agonía de Escarcha por Malcrom y Kirkhammett
 - Zul'Drak -
 4.6.0  - 15/08/2012: Zul'Drak: Horizonte Oscuro - Reunidos por Pitcrawler
 4.6.1  - 26/11/2012: Zul'Drak: La venganza del Rey de la Tormenta spawns de YTDB scripts de CoolerSAI
@@ -1605,6 +1626,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.6.27 - 19/03/2013: Zul'Drak: Arrasando por Muzashi
 4.6.28 - 20/03/2013: Zul'Drak: Convocatoria en Zol'Heb por Muzashi
 4.6.29 - 15/04/2013: Zul'Drak: Rondadores glotones por Rincewind
+4.6.30 - 13/07/2014: Zul'Drak: Patrulla trol: hasta la muerte por Cinde
 - Colinas Pardas -
 4.7.0  - 15/08/2012: Colinas Pardas: Una influencia oscura por Muzashi
 4.7.1  - 30/09/2012: Colinas Pardas: Runas de coacción por Xanvial y Muzashi
@@ -1634,6 +1656,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.7.25  - 12/03/2013: Colinas Pardas: Cabalgando sobre el cohete rojo por Muzashi
 4.7.26  - 12/03/2013: Colinas Pardas: ¡Tralarí, tralará! por Pitcrawler
 4.7.27  - 07/11/2013: Colinas Pardas: El señor feudal de Runavold por Muzashi
+4.7.28  - 18/08/2014: Colinas Pardas: En el nombre de Loken por Rincewind
 - Tundra Boreal -
 4.8.0  - 26/05/2012: Tundra Boreal: Tecnologia con otro proposito por Muzashi
 4.8.1  - 26/05/2012: Tundra Boreal: La muerte cae desde el cielo por Muzashi
@@ -1825,6 +1848,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.10.79 - 04/06/2014: Valle Sombraluna: La cámara de invocación por Rincewind
 4.10.80 - 10/07/2014: Valle Sombraluna: La Clave de Condenación por Hyxon
 4.10.81 - 10/07/2014: Valle Sombraluna: La Clave de Condenación. La carga de Ar'tor por Hyxon
+4.10.82 - 19/07/2014: Bosque de Terokkar: El gran gusano de hueso por Cinde
 - Kalimdor y Reinos del Este -
 4.11.0 - 19/06/2012: Cuna del Invierno: ¡Señuelo! por Nelegalno
 4.11.1 - 25/06/2012: Vega de Tuercespina: El maestro mayor de la arena por ZxBiohazardZx y Muzashi
@@ -1861,6 +1885,10 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.11.32 - 20/05/2014: Forjaz/Orgrimmar: Set de mazmorras 2 por Rincewind
 4.11.33 - 12/06/2014: Sierra Espolón: Ordenes de Gerenzo por Hyxon y Muzashi
 4.11.34 - 20/06/2014: Scholomance: La parte derecha del amuleto de Lord Valthalak por Hyxon
+4.11.35 - 17/07/2014: Desolace: El rodeo kodo por Cinde
+4.11.36 - 21/07/2014: Maraudon: El cetro de Celebras por Hyxon
+4.11.37 - 27/07/2014: Pantano de las Penas: Bocaditos Peligrosos por Hyxon
+4.11.38 - 19/08/2014: Marjal Revolcafango: Libera a los raptores por Kirkhammett y Rincewind
 
 
 ################
@@ -1973,6 +2001,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 6.97 - 21/06/2014: Festival del solsticio de verano: Arreglado el Honrar la Llama de Nagrand alianza por Evef
 6.98 - 22/06/2014: Festival del solsticio de verano: Al matar a Lord Ahune entregará la bolsa correctamente por Evef
 6.99 - 08/07/2014: Añadidas flags y objetos al NPC Kaye Toggie por Hyxon
+6.100 - 04/08/2014: Condiciones para objetivos de spells de Campaign Warhorse por Rincewind
 
 
 ##########
@@ -1997,7 +2026,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 7.22 - 12/08/2013: Nuevos textos para el started! de bg por Eilo
 7.23 - 31/10/2013: Torneo PvP en Hyjal por Shorak
 7.24 - 31/10/2013: Disables de spells en zonas de eventos por Shorak y Muzashi
-7.25 - 10/06/2014: World of WarKarts: Se agrega soporte para iniciar y finalizar cada carrera por Jar
 7.26 - 07/07/2014: Listado Premios Custom Jñomis por Shorak
 
 
