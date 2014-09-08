@@ -316,6 +316,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 1.245 - 04/06/2014: Pets: Al summonear una pet, si el player ya tenia una del mismo tipo, debe eliminarse e invocar una nueva (excluye pet de Hunter) por Soneh y Souler
 1.246 - 03/08/2014: Core/Unit: el efecto SPELL_AURA_USE_NORMAL_MOVEMENT_SPEED solo afectará a jugadores o npc's que no sean bosses de instancias por Saitama
 1.247 - 19/08/2014: Core/CreatureText: Reparados los mensajes del tipo RAID_BOSS_WHISPER y MONSTER_WHISPER por Saitama
+1.248 - 29/08/2014: IoC: Al morir los jugadores iran a los cementerios de su faccion por Morthos.
 
 
 ########################
@@ -569,6 +570,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.2.281 - 12/08/2014: GunshipBattle corregido el uso de Elite en Skybreaker Sergeant y Kor'kron Sergeant por Saitama
 2.2.282 - 12/08/2014: GunshipBattle implementado el uso de Elite de Skybreaker Marine y Kor'kron Reaver por Saitama
 2.2.283 - 14/08/2014: ProfessorPutricide implementado el evento de Airlock antes de entrar a Putricide's Laboratory of Alchemical Horrors and Fun por Saitama
+2.2.284 - 03/09/2014: TheLichKing deshabilitado el Levitate en el trono, evitando exploits por Eilo
+2.2.285 - 03/09/2014: TheLichKing deshabilitado Slow Fall en el trono, evitando exploits por Eilo
 - Naxxramas -
 2.3.1  - 25/03/2013: Naxxramas: Heigan arreglo del Plague Cloud para el logro Safety Dance por Eilo
 2.3.2  - 06/06/2013: Naxxramas: Los cuatro jinetes: permitiendo que el cofre sea seleccionable en dificultad 25 por Dolanpls
@@ -1889,6 +1892,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 4.11.36 - 21/07/2014: Maraudon: El cetro de Celebras por Hyxon
 4.11.37 - 27/07/2014: Pantano de las Penas: Bocaditos Peligrosos por Hyxon
 4.11.38 - 19/08/2014: Marjal Revolcafango: Libera a los raptores por Kirkhammett y Rincewind
+4.11.39 - 25/08/2014: Vallefresno: Suministros a Auberdine por Cinde
+4.11.40 - 07/09/2014: Claro de la Luna: Leyendas veraces por Eissesh
 
 
 ################
