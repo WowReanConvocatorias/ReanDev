@@ -317,6 +317,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 1.246 - 03/08/2014: Core/Unit: el efecto SPELL_AURA_USE_NORMAL_MOVEMENT_SPEED solo afectará a jugadores o npc's que no sean bosses de instancias por Saitama
 1.247 - 19/08/2014: Core/CreatureText: Reparados los mensajes del tipo RAID_BOSS_WHISPER y MONSTER_WHISPER por Saitama
 1.248 - 29/08/2014: IoC: Al morir los jugadores iran a los cementerios de su faccion por Morthos.
+1.249 - 08/09/2014: Wintergrasp: Agregado un objeto faltante a los vendedores por Morthos.
+1.250 - 08/09/2014: IoC: Implementado SetDestructibleState para las puertas de IoC, ahora los jugadores no se podran atacar atraves de ellas por Morthos.
 
 
 ########################
@@ -612,6 +614,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.5.10 - 04/03/2014: EyeOfEternity: Cambiado el nivel minimo para entrar en la instancia por Evef
 2.5.11 - 04/03/2014: EyeOfEternity: Ajustados los datos y vida de Malygos 25n extraido de TC por Evef
 2.5.12 - 01/06/2014: EyeOfEternity: Corregido flag del Exit Portal para que no despawnee al ser usado por Saitama
+2.5.13 - 01/10/2014: EyeOfEternity: Malygos Kill Credit gived correctly to all players por Muit
+2.5.14 - 02/10/2014: EyeOfEternity: Eliminados los warnings de compilacion por Evef
 - Ulduar -
 2.6.0  - 15/08/2012: Ulduar: Inmunidades generales por DorianGrey
 2.6.2  - 06/05/2012: Ulduar: Mimiron nueva script, original por Darkman, actualizada por Eilo
@@ -1144,6 +1148,7 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 2.26.3 - 11/05/2014: Stratholme: Se implementa sistema para los PostBox, necesario para dar summon al boss Postmaster Malown por Jar
 - HellfireRamparts -
 2.27.1 - 16/05/2014: HellfireRamparts: Nazan entrara en combate de forma correcta una vez se inicie el evento con vazruden por Jar
+2.27.2 - 01/10/2014: ShatteredHalls: Grand Warlock Nethekurse applies Kargath's Executioner Buff when dies por Muit
 
 
 ###############################
@@ -1317,6 +1322,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 3.244 - 22/06/2014: Mage: Fix spell Ignite, ahora cada pulso no refrescará combate por Soneh
 3.245 - 22/06/2014: Mage: Fix spell Living Bomb, ahora el tick final no pondrá en combate por Soneh
 3.246 - 24/06/2014: Priest: Fix spell Shadowfiend, ahora el priest recibirá el mana tambien cuando la pet ataca y su golpe es absorvido por garyfisher
+3.247 - 25/09/2014: Mage: Fix spell Arcane Blast, ahora aplicar? el buff al impactar con exito en el objetivo por Gildor
+3.248 - 25/09/2014: Hunter: Corregida distancia de aparición de las trampas por Gildor
 
 
 #################
@@ -1989,7 +1996,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 6.80 - 11/11/2013: Tumbas de maná: Cámaras de Estasis de las Tumbas de Mana por Lauja
 6.81 - 25/11/2013: Modificados RequiredLevel y bondings en los objetos Mark of Hakkar, Hakkari Breastplate y Hakkari Shroud por Rincewind
 6.82 - 28/11/2013: Modificados RequiredLevel y bondings para equipo recompensa de mision obtenible por donación por Crash
-6.83 - 03/12/2013: Karazhan: Nightbane al presionar la urna aparecera el boss correctamente por Sothu
 6.84 - 05/12/2013: Fiesta de la cerveza: Boxey Boltspinner, eliminar de creature el que no esta en el evento por Rincewind
 6.85 - 18/01/2014: Cumbre de Rocanegra: Scripteado el evento del logro ¡Leeeeeeeeeeeeeroy! por Sothu
 6.86 - 28/02/2014: Molten Core: Ragnaros: Ahora Ragnaros sera estatico, comportamiento blizzlike, por Efreet
@@ -2007,6 +2013,8 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 6.98 - 22/06/2014: Festival del solsticio de verano: Al matar a Lord Ahune entregará la bolsa correctamente por Evef
 6.99 - 08/07/2014: Añadidas flags y objetos al NPC Kaye Toggie por Hyxon
 6.100 - 04/08/2014: Condiciones para objetivos de spells de Campaign Warhorse por Rincewind
+6.101 - 26/09/2014: Karazhan: Nightbane - Combat starts correctly with Blackened Urn script por Muit
+6.102 - 28/09/2014: Karazhan: Nightbane - Sleeping, movement & phases fixed por Muit
 
 
 ##########
@@ -2032,5 +2040,6 @@ Milestone7.0: Código custom, utilitario y caracteristicas interesantes varias.
 7.23 - 31/10/2013: Torneo PvP en Hyjal por Shorak
 7.24 - 31/10/2013: Disables de spells en zonas de eventos por Shorak y Muzashi
 7.26 - 07/07/2014: Listado Premios Custom Jñomis por Shorak
+7.27 - 18/07/2014: World of WarKarts: Scripts de soporte para el evento World of Warkarts por Jar
 
 
