@@ -60,6 +60,9 @@ public:
         boss_ambassador_hellmawAI(Creature* creature) : npc_escortAI(creature)
         {
             instance = creature->GetInstanceScript();
+
+            me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_UNK_31);
+            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_PC);
         }
 
         InstanceScript* instance;
@@ -132,6 +135,12 @@ public:
             DoScriptText(RAND(SAY_AGGRO1, SAY_AGGRO2, SAY_AGGRO3), me);
         }
 
+        void AttackStart(Unit* who)
+        {
+            if (instance->GetData(TYPE_OVERSEER) == DONE)
+                ScriptedAI::AttackStart(who);
+        }
+
         void KilledUnit(Unit* /*victim*/)
         {
             DoScriptText(RAND(SAY_SLAY1, SAY_SLAY2), me);
@@ -155,6 +164,7 @@ public:
                     {
                         if (instance->GetData(TYPE_OVERSEER) == DONE)
                         {
+                            me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_PC);
                             DoIntro();
                             return;
                         }
