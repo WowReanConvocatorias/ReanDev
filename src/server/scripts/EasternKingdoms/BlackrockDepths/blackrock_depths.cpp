@@ -1321,6 +1321,95 @@ public:
     };
 };
 
+
+float hurleySpawnPosition[4] = {894.2583f, -135.1512f, -49.7505f, 5.19f};
+
+enum hurleySpells
+{
+    SPELL_HURLEY_DRUNKEN_RAGE = 14872,
+    SPELL_FLAME_BREATH        = 9573
+};
+
+class npc_hurley_blackbreath : public CreatureScript
+{
+public:
+    npc_hurley_blackbreath() : CreatureScript("npc_hurley_blackbreath") { }
+
+    CreatureAI* GetAI(Creature* creature) const
+    {
+        return new npc_hurley_blackbreathAI(creature);
+    }
+
+    struct npc_hurley_blackbreathAI : public ScriptedAI
+    {
+        npc_hurley_blackbreathAI(Creature* creature) : ScriptedAI(creature)
+        {
+            _instance = creature->GetInstanceScript();
+            if (_instance)
+                _instance->SetData64(NPC_HURLEY_BLACKBREATH, creature->GetGUID());
+            creature->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_PC);
+        }
+
+        void MoveInLineOfSight(Unit* who)
+        {
+        }
+
+        void EnterCombat(Unit* who)
+        {
+            me->CastSpell(me, SPELL_HURLEY_DRUNKEN_RAGE);
+        }
+
+        void Reset()
+        {
+            me->GetMotionMaster()->MoveTargetedHome();
+        }
+
+        void JustDied(Unit* killer)
+        {
+        }
+
+        void UpdateAI(const uint32 diff)
+        {
+            DoMeleeAttackIfReady();
+        }
+
+    private:
+        InstanceScript* _instance;
+    };
+};
+
+class go_keg_of_thunderbrew_lager : public GameObjectScript
+{
+public:
+    go_keg_of_thunderbrew_lager() : GameObjectScript("go_keg_of_thunderbrew_lager") { }
+
+    bool OnGossipHello(Player* player, GameObject* go)
+    {
+        if (_instance = player->GetInstanceScript())
+        {
+            uint32 count = _instance->GetData(NPC_HURLEY_BLACKBREATH);
+            count++;
+
+            if (count >= 3 && _instance->GetData64(NPC_HURLEY_BLACKBREATH) == 0)
+            {
+                TempSummon* hurley = go->SummonCreature(NPC_HURLEY_BLACKBREATH, hurleySpawnPosition[0], hurleySpawnPosition[1], hurleySpawnPosition[2], hurleySpawnPosition[3]);
+                
+                hurley->GetAI()->AttackStart(player);
+                go->SetFlag(GAMEOBJECT_FLAGS, GO_FLAG_INTERACT_COND);
+                count = 0;
+            }
+
+            _instance->SetData(NPC_HURLEY_BLACKBREATH, count);
+            return true;
+        }
+        return false;
+    }
+
+private:
+    InstanceScript* _instance;
+};
+
+
 void AddSC_blackrock_depths()
 {
     new go_shadowforge_brazier();
@@ -1330,6 +1419,8 @@ void AddSC_blackrock_depths()
     new npc_kharan_mighthammer();
     new npc_lokhtos_darkbargainer();
     new npc_rocknot();
+    new npc_hurley_blackbreath();
+    new go_keg_of_thunderbrew_lager();
     // Fix us
     /*new npc_dughal_stormwing();
       new npc_tobias_seecher();

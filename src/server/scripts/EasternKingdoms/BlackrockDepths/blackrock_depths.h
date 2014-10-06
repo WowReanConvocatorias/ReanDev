@@ -57,4 +57,10 @@ enum eTypes
     DATA_SF_BRAZIER_S       = 26,
     DATA_MOIRA              = 27,
 };
+
+enum Creatures
+{
+    NPC_HURLEY_BLACKBREATH  = 9537
+};
+
 #endif
