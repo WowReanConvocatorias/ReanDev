@@ -2864,7 +2864,7 @@ Activate.Rank.4 = 0
 #
 #    Time.Online
 #       Establece el tiempo que el jugador debe estar conectado sin interrupcion para recibir la recompensa
-#       Importante: EL tiempo debe estar expresado en milisegundos
+#       Importante: El tiempo debe estar expresado en milisegundos
 #       Default: 0       (Desactivar)
 
 Time.Online = 0
