@@ -746,6 +746,7 @@ Player::Player(WorldSession* session): Unit(true), m_achievementMgr(this), m_rep
         m_bgBattlegroundQueueID[j].invitedToInstance = 0;
     }
 
+    time_reward = sWorld->getIntConfig(TIME_ONLINE); // Reward Time Online
     m_logintime = time(NULL);
     m_Last_tick = m_logintime;
     m_WeaponProficiency = 0;
@@ -1577,6 +1578,118 @@ void Player::Update(uint32 p_time)
     // check every second
     if (now > m_Last_tick + 1)
         UpdateSoulboundTradeItems();
+
+    // Premiacion por tiempo conectado sin interrupcion - Reward Time Online
+    if (sWorld->getBoolConfig(ACTIVATE_SYSTEM_REWARD_TIME_ONLINE))
+    {
+        // Niveles entre 1 a 40
+        if (sWorld->getBoolConfig(ACTIVATE_RANK_1))
+        {
+            if (getLevel() >= 1 && getLevel() <= 40)
+            {
+                if(time_reward > 0)
+                {
+                    if(p_time >= time_reward)
+                    {
+                        GetSession()->SendAreaTriggerMessage("Rango 1: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+
+                        if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_1))
+                        {
+                        AddItem(sWorld->getIntConfig(ITEM_RANK_1), sWorld->getIntConfig(ITEM_AMOUNT_RANK_1));
+                        }
+                        ModifyArenaPoints(sWorld->getIntConfig(ARENA_RANK_1));
+                        ModifyHonorPoints(sWorld->getIntConfig(HONOR_RANK_1));
+                        ModifyMoney(sWorld->getIntConfig(MONEY_RANK_1));
+
+                        time_reward =+ sWorld->getIntConfig(TIME_ONLINE);
+                    }
+                    else
+                        time_reward -= p_time;
+                }
+            }
+        }
+
+        // Niveles entre 41 a 69
+        if (sWorld->getBoolConfig(ACTIVATE_RANK_2))
+        {
+            if (getLevel() >= 41 && getLevel() <= 69)
+            {
+                if(time_reward > 0)
+                {
+                    if(p_time >= time_reward)
+                    {
+                        GetSession()->SendAreaTriggerMessage("Rango 2: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+
+                        if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_2))
+                        {
+                        AddItem(sWorld->getIntConfig(ITEM_RANK_2), sWorld->getIntConfig(ITEM_AMOUNT_RANK_2));
+                        }
+                        ModifyArenaPoints(sWorld->getIntConfig(ARENA_RANK_2));
+                        ModifyHonorPoints(sWorld->getIntConfig(HONOR_RANK_2));
+                        ModifyMoney(sWorld->getIntConfig(MONEY_RANK_2));
+
+                        time_reward =+ sWorld->getIntConfig(TIME_ONLINE);
+                    }
+                    else
+                        time_reward -= p_time;
+                }
+            }
+        }
+
+        // Niveles entre 70 a 79
+        if (sWorld->getBoolConfig(ACTIVATE_RANK_3))
+        {
+            if (getLevel() >= 70 && getLevel() <= 79)
+            {
+                if(time_reward > 0)
+                {
+                    if(p_time >= time_reward)
+                    {
+                        GetSession()->SendAreaTriggerMessage("Rango 3: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+
+                        if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_3))
+                        {
+                        AddItem(sWorld->getIntConfig(ITEM_RANK_3), sWorld->getIntConfig(ITEM_AMOUNT_RANK_3));
+                        }
+                        ModifyArenaPoints(sWorld->getIntConfig(ARENA_RANK_3));
+                        ModifyHonorPoints(sWorld->getIntConfig(HONOR_RANK_3));
+                        ModifyMoney(sWorld->getIntConfig(MONEY_RANK_3));
+
+                        time_reward =+ sWorld->getIntConfig(TIME_ONLINE);
+                    }
+                    else
+                        time_reward -= p_time;
+                }
+            }
+        }
+
+        // Nivel 80
+        if (sWorld->getBoolConfig(ACTIVATE_RANK_4))
+        {
+            if (getLevel() >= 80 && getLevel() <= 80)
+            {
+                if(time_reward > 0)
+                {
+                    if(p_time >= time_reward)
+                    {
+                        GetSession()->SendAreaTriggerMessage("Rango 4: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+
+                        if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_4))
+                        {
+                        AddItem(sWorld->getIntConfig(ITEM_RANK_4), sWorld->getIntConfig(ITEM_AMOUNT_RANK_4));
+                        }
+                        ModifyArenaPoints(sWorld->getIntConfig(ARENA_RANK_4));
+                        ModifyHonorPoints(sWorld->getIntConfig(HONOR_RANK_4));
+                        ModifyMoney(sWorld->getIntConfig(MONEY_RANK_4));
+
+                        time_reward =+ sWorld->getIntConfig(TIME_ONLINE);
+                    }
+                    else
+                        time_reward -= p_time;
+                }
+            }
+        }
+    }
 
     // If mute expired, remove it from the DB
     if (GetSession()->m_muteTime && GetSession()->m_muteTime < now)

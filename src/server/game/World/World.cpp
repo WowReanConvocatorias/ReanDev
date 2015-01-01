@@ -1214,6 +1214,43 @@ void World::LoadConfigSettings(bool reload)
     m_bool_configs[CONFIG_PDUMP_NO_PATHS] = ConfigMgr::GetBoolDefault("PlayerDump.DisallowPaths", true);
     m_bool_configs[CONFIG_PDUMP_NO_OVERWRITE] = ConfigMgr::GetBoolDefault("PlayerDump.DisallowOverwrite", true);
 
+    // Reward Time Online
+    m_bool_configs[ACTIVATE_SYSTEM_REWARD_TIME_ONLINE] = ConfigMgr::GetBoolDefault("Activate.System.Reward.Time.Online", false);
+    m_bool_configs[ACTIVATE_RANK_1] = ConfigMgr::GetBoolDefault("Activate.Rank.1", false);
+    m_bool_configs[ACTIVATE_RANK_2] = ConfigMgr::GetBoolDefault("Activate.Rank.2", false);
+    m_bool_configs[ACTIVATE_RANK_3] = ConfigMgr::GetBoolDefault("Activate.Rank.3", false);
+    m_bool_configs[ACTIVATE_RANK_4] = ConfigMgr::GetBoolDefault("Activate.Rank.4", false);
+
+    m_int_configs[TIME_ONLINE] = ConfigMgr::GetIntDefault("Time.Online", 0);
+
+    m_bool_configs[ACTIVATE_ITEM_RANK_1] = ConfigMgr::GetBoolDefault("Activate.Item.Rank.1", false);
+    m_int_configs[ITEM_RANK_1] = ConfigMgr::GetIntDefault("Item.Rank.1", 0);
+    m_int_configs[ITEM_AMOUNT_RANK_1] = ConfigMgr::GetIntDefault("Item.Amount.Rank.1", 0);
+    m_int_configs[ARENA_RANK_1] = ConfigMgr::GetIntDefault("Arena.Rank.1", 0);
+    m_int_configs[HONOR_RANK_1] = ConfigMgr::GetIntDefault("Honor.Rank.1", 0);
+    m_int_configs[MONEY_RANK_1] = ConfigMgr::GetIntDefault("Money.Rank.1", 0);
+
+    m_bool_configs[ACTIVATE_ITEM_RANK_2] = ConfigMgr::GetBoolDefault("Activate.Item.Rank.2", false);
+    m_int_configs[ITEM_RANK_2] = ConfigMgr::GetIntDefault("Item.Rank.2", 0);
+    m_int_configs[ITEM_AMOUNT_RANK_2] = ConfigMgr::GetIntDefault("Item.Amount.Rank.2", 0);
+    m_int_configs[ARENA_RANK_2] = ConfigMgr::GetIntDefault("Arena.Rank.2", 0);
+    m_int_configs[HONOR_RANK_2] = ConfigMgr::GetIntDefault("Honor.Rank.2", 0);
+    m_int_configs[MONEY_RANK_2] = ConfigMgr::GetIntDefault("Money.Rank.2", 0);
+
+    m_bool_configs[ACTIVATE_ITEM_RANK_3] = ConfigMgr::GetBoolDefault("Activate.Item.Rank.3", false);
+    m_int_configs[ITEM_RANK_3] = ConfigMgr::GetIntDefault("Item.Rank.3", 0);
+    m_int_configs[ITEM_AMOUNT_RANK_3] = ConfigMgr::GetIntDefault("Item.Amount.Rank.3", 0);
+    m_int_configs[ARENA_RANK_3] = ConfigMgr::GetIntDefault("Arena.Rank.3", 0);
+    m_int_configs[HONOR_RANK_3] = ConfigMgr::GetIntDefault("Honor.Rank.3", 0);
+    m_int_configs[MONEY_RANK_3] = ConfigMgr::GetIntDefault("Money.Rank.3", 0);
+
+    m_bool_configs[ACTIVATE_ITEM_RANK_4] = ConfigMgr::GetBoolDefault("Activate.Item.Rank.4", false);
+    m_int_configs[ITEM_RANK_4] = ConfigMgr::GetIntDefault("Item.Rank.4", 0);
+    m_int_configs[ITEM_AMOUNT_RANK_4] = ConfigMgr::GetIntDefault("Item.Amount.Rank.4", 0);
+    m_int_configs[ARENA_RANK_4] = ConfigMgr::GetIntDefault("Arena.Rank.4", 0);
+    m_int_configs[HONOR_RANK_4] = ConfigMgr::GetIntDefault("Honor.Rank.4", 0);
+    m_int_configs[MONEY_RANK_4] = ConfigMgr::GetIntDefault("Money.Rank.4", 0);
+
     // call ScriptMgr if we're reloading the configuration
     m_bool_configs[CONFIG_WINTERGRASP_ENABLE] = ConfigMgr::GetBoolDefault("Wintergrasp.Enable", false);
     m_int_configs[CONFIG_WINTERGRASP_PLR_MAX] = ConfigMgr::GetIntDefault("Wintergrasp.PlayerMax", 100);

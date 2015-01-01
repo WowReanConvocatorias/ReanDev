@@ -1163,6 +1163,7 @@ class Player : public Unit, public GridObject<Player>
         void SetCommandStatusOff(uint32 command) { _activeCheats &= ~command; }
 
         // Played Time Stuff
+        uint32 time_reward; // Reward Time Online
         time_t m_logintime;
         time_t m_Last_tick;
         uint32 m_Played_time[MAX_PLAYED_TIME_INDEX];
