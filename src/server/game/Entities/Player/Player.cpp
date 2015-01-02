@@ -1591,7 +1591,7 @@ void Player::Update(uint32 p_time)
                 {
                     if(p_time >= time_reward)
                     {
-                        GetSession()->SendAreaTriggerMessage("Rango 1: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+                        GetSession()->SendAreaTriggerMessage("Rango 1: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!, WoWRean.");
 
                         if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_1))
                         {
@@ -1618,7 +1618,7 @@ void Player::Update(uint32 p_time)
                 {
                     if(p_time >= time_reward)
                     {
-                        GetSession()->SendAreaTriggerMessage("Rango 2: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+                        GetSession()->SendAreaTriggerMessage("Rango 2: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!, WoWRean.");
 
                         if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_2))
                         {
@@ -1645,7 +1645,7 @@ void Player::Update(uint32 p_time)
                 {
                     if(p_time >= time_reward)
                     {
-                        GetSession()->SendAreaTriggerMessage("Rango 3: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+                        GetSession()->SendAreaTriggerMessage("Rango 3: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!, WoWRean.");
 
                         if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_3))
                         {
@@ -1672,7 +1672,7 @@ void Player::Update(uint32 p_time)
                 {
                     if(p_time >= time_reward)
                     {
-                        GetSession()->SendAreaTriggerMessage("Rango 4: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!");
+                        GetSession()->SendAreaTriggerMessage("Rango 4: Has cumplido 60 minutos conectado sin interrupción, aquí tienes tu recompensa!, WoWRean.");
 
                         if (sWorld->getBoolConfig(ACTIVATE_ITEM_RANK_4))
                         {

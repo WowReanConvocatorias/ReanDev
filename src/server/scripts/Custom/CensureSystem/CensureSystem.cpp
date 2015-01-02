@@ -64,7 +64,7 @@ void CheckMessage(Player* player, std::string& msg, uint32 lang, Player* , Group
         if (lower.find(checks[i]) != std::string::npos)
         {
             msg = " ";
-            ChatHandler(player->GetSession()).PSendSysMessage("""\xc2\xa1""La publicidad y el comportamiento vulgar no est""\xC3\xA1""n permitidos!. WoWRean.");
+            ChatHandler(player->GetSession()).PSendSysMessage("""\xc2\xa1""La publicidad y el comportamiento vulgar no est""\xC3\xA1""n permitidos!, WoWRean.");
             return;
         }
 
