@@ -27,6 +27,7 @@
 #    CHARACTER DELETE OPTIONS
 #    CUSTOM SERVER OPTIONS
 #    LOGGING SYSTEM SETTINGS
+#    REWARD TIME ONLINE
 #
 ###################################################################################################
 
@@ -2834,3 +2835,111 @@ Loggers=Root Chat DBErrors GM RA Warden Character Load WorldServer Opcodes
 
 #
 ###################################################################################################
+
+##################################################################################################################################
+#    REWARD TIME ONLINE
+##################################################################################################################################
+#
+#    Activate.System.Reward.Time.Online
+#       Activa el sistema de premiacion por tiempo conectado sin interrupcion
+#       Default: 0 (Desactivar)
+#                1 (Activar)
+
+Activate.System.Reward.Time.Online = 0
+
+#
+#    Activate.Rank.1 - Niveles de 1 a 40
+#    Activate.Rank.2 - Niveles de 41 a 69
+#    Activate.Rank.3 - Niveles de 70 a 79
+#    Activate.Rank.4 - Nivel 80
+#       Activa la premiacion por cada rango de niveles
+#       Default: 0 (Desactivar)
+#                1 (Activar)
+
+Activate.Rank.1 = 0
+Activate.Rank.2 = 0
+Activate.Rank.3 = 0
+Activate.Rank.4 = 0
+
+#
+#    Time.Online
+#       Establece el tiempo que el jugador debe estar conectado sin interrupcion para recibir la recompensa
+#       Importante: El tiempo debe estar expresado en milisegundos
+#       Default: 0       (Desactivar)
+
+Time.Online = 0
+
+#
+#    Activate.Item.Rank.1 (Activa las opciones para que el jugador pueda recibir objetos)
+#    Item.Rank.1          (Objeto a recibir al cumplir el tiempo establecido)
+#    Item.Amount.Rank.1   (Cantidad a recibir del objeto establecido)
+#    Arena.Rank.1         (Cantidad de puntos de arena a recibir al cumplir el tiempo establecido)
+#    Honor.Rank.1         (Cantidad de puntos de honor a recibir al cumplir el tiempo establecido)
+#    Money.Rank.1         (Cantidad de dinero a recibir al cumplir el tiempo establecido - 10000 es una moneda de oro)
+#       Establece recompensas que el jugador recibira al cumplir el tiempo conectado establecido sin interrupcion (Rango 1)
+#       Default: 0 (Desactivar)
+
+Activate.Item.Rank.1 = 0
+Item.Rank.1          = 0
+Item.Amount.Rank.1   = 0
+
+Arena.Rank.1       = 0
+Honor.Rank.1       = 0
+Money.Rank.1       = 0
+
+#
+#    Activate.Item.Rank.2 (Activa las opciones para que el jugador pueda recibir objetos)
+#    Item.Rank.2          (Objeto a recibir al cumplir el tiempo establecido)
+#    Item.Amount.Rank.2   (Cantidad a recibir del objeto establecido)
+#    Arena.Rank.2         (Cantidad de puntos de arena a recibir al cumplir el tiempo establecido)
+#    Honor.Rank.2         (Cantidad de puntos de honor a recibir al cumplir el tiempo establecido)
+#    Money.Rank.2         (Cantidad de dinero a recibir al cumplir el tiempo establecido - 10000 es una moneda de oro)
+#       Establece recompensas que el jugador recibira al cumplir el tiempo conectado establecido sin interrupcion (Rango 2)
+#       Default: 0 (Desactivar)
+
+Activate.Item.Rank.2 = 0
+Item.Rank.2          = 0
+Item.Amount.Rank.2   = 0
+
+Arena.Rank.2       = 0
+Honor.Rank.2       = 0
+Money.Rank.2       = 0
+
+#
+#    Activate.Item.Rank.3 (Activa las opciones para que el jugador pueda recibir objetos)
+#    Item.Rank.3          (Objeto a recibir al cumplir el tiempo establecido)
+#    Item.Amount.Rank.3   (Cantidad a recibir del objeto establecido)
+#    Arena.Rank.3         (Cantidad de puntos de arena a recibir al cumplir el tiempo establecido)
+#    Honor.Rank.3         (Cantidad de puntos de honor a recibir al cumplir el tiempo establecido)
+#    Money.Rank.3         (Cantidad de dinero a recibir al cumplir el tiempo establecido - 10000 es una moneda de oro)
+#       Establece recompensas que el jugador recibira al cumplir el tiempo conectado establecido sin interrupcion (Rango 3)
+#       Default: 0 (Desactivar)
+
+Activate.Item.Rank.3 = 0
+Item.Rank.3          = 0
+Item.Amount.Rank.3   = 0
+
+Arena.Rank.3       = 0
+Honor.Rank.3       = 0
+Money.Rank.3       = 0
+
+#
+#    Activate.Item.Rank.4 (Activa las opciones para que el jugador pueda recibir objetos)
+#    Item.Rank.4          (Objeto a recibir al cumplir el tiempo establecido)
+#    Item.Amount.Rank.4   (Cantidad a recibir del objeto establecido)
+#    Arena.Rank.4         (Cantidad de puntos de arena a recibir al cumplir el tiempo establecido)
+#    Honor.Rank.4         (Cantidad de puntos de honor a recibir al cumplir el tiempo establecido)
+#    Money.Rank.4         (Cantidad de dinero a recibir al cumplir el tiempo establecido - 10000 es una moneda de oro)
+#       Establece recompensas que el jugador recibira al cumplir el tiempo conectado establecido sin interrupcion (Rango 4)
+#       Default: 0 (Desactivar)
+
+Activate.Item.Rank.4 = 0
+Item.Rank.4          = 0
+Item.Amount.Rank.4   = 0
+
+Arena.Rank.4       = 0
+Honor.Rank.4       = 0
+Money.Rank.4       = 0
+
+#
+##################################################################################################################################
